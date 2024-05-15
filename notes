@@ -1,0 +1,85 @@
+# pip install pipenv
+# pip install
+# pipenv install python-dotenv
+# pipenv install langchain
+
+# Welcher Document Loader --> CSV
+# Welcher Splitter --> https://python.langchain.com/v0.1/docs/modules/data_connection/document_transformers/
+    --> https://python.langchain.com/v0.1/docs/modules/data_connection/document_transformers/recursive_text_splitter/
+    --> Chunk size ermittelt: https://chunkviz.up.railway.app/
+        --> stichprobenartig einzelne documents reinkopiert und ausprobiert
+            --> chunksize = 650
+            --> chunk overlap = 50
+    --> nach Splitting angepasst auf chunksize = 700
+
+# Welches Embeddings Model? --> erstmal einfach so: https://python.langchain.com/v0.1/docs/integrations/text_embedding/huggingfacehub/#hugging-face-inference-api mit dem aus dem Beispiel
+# Welcher Vector Store? --> erstmal einfach FAISS: https://python.langchain.com/v0.1/docs/integrations/vectorstores/faiss/
+
+# pipenv install langchain-community
+# pipenv install faiss-cpu
+
+# Welches LLM? https://python.langchain.com/v0.1/docs/integrations/chat/ --> https://python.langchain.com/v0.1/docs/integrations/chat/huggingface/
+    --> HuggingFaceHub
+
+# pipenv install huggingface_hub
+# pipenv install transformers
+
+# HuggingFaceEndpoint, weil Hub deprecated
+# pipenv install jinja2 (handles chat templates)
+
+# frontend
+# pipenv install streamlit
+# https://docs.streamlit.io/develop/tutorials/llms/build-conversational-apps
+# https://docs.streamlit.io/develop/api-reference
+
+
+# Welches embeddings model? --> https://huggingface.co/sentence-transformers --> https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2
+    # implementieren
+        https://python.langchain.com/v0.1/docs/integrations/text_embedding/sentence_transformers/
+        pipenv install sentence-transformers
+
+# Welcher vector store? --> https://myscale.com/blog/faiss-vs-chroma-vector-storage-battle/ --> Chroma
+    # implementieren
+        https://python.langchain.com/v0.1/docs/modules/data_connection/vectorstores/
+        --> doch FAISS, weil man für Chroma Microsoft C++ Build Tools installieren muss (dependency chroma-hnswlib)
+        pipenv install faiss-cpu
+    # TODO einstellen: https://python.langchain.com/v0.1/docs/integrations/vectorstores/faiss/
+
+# Vector store als retriever
+      https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/
+    # TODO einstellen: https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/#maximum-marginal-relevance-retrieval
+    # TODO evaluation
+
+# Welches LLM? --> https://huggingface.co/chat/models
+    https://huggingface.co/CohereForAI/c4ai-command-r-plus
+    oder
+    https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
+    # erstmal richtwerte:
+                max_new_tokens=512,
+                top_k=50,
+                temperature=0.3,
+                repetition_penalty=1.1
+
+
+TODO
+# Prompt Template und Chain
+# https://python.langchain.com/v0.1/docs/modules/model_io/prompts/
+# https://python.langchain.com/v0.1/docs/modules/chains/
+
+# Chat History: https://python.langchain.com/v0.1/docs/use_cases/question_answering/chat_history/
+# Chatbots: https://python.langchain.com/v0.1/docs/use_cases/chatbots/
+# Chat Models: https://python.langchain.com/v0.1/docs/modules/model_io/chat/
+
+# LLM Werte einstellen
+# Vector Store einstellen
+# Retriever einstellen und evaluieren
+
+# context (in bezug auf vorherige frage(n)) funktioniert noch nicht
+
+# alles in .env auslagern
+# kleines Modell gegen großes Modell testen, welches hat wo wie performt?
+# Lessons Learned: authentifizierung zu hugging face, dokus richtig lesen erspart arbeit
+# Präsentation: 20 min
+# Doku: 5 Seiten
+
+
