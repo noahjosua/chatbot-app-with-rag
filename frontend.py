@@ -1,5 +1,7 @@
 import streamlit as st
 from langchain.prompts import PromptTemplate
+from langchain.chains.llm import LLMChain
+from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
@@ -24,48 +26,53 @@ def initialize_frontend():
 
 def chat_history(chat_model, retriever):
     # React to user input
-    if prompt := st.chat_input('Type your question'):
+    if user_prompt := st.chat_input('Type your question'):
         # Display user message in chat message container
         with st.chat_message('user'):
-            st.markdown(prompt)
+            st.markdown(user_prompt)
 
         with (st.spinner('Thinking...')):
-            template = """Use the following pieces of context to answer the question at the end. 
+            prompt_template = """Use the following pieces of context to answer the question at the end. 
             If you don't know the answer, just say that you don't know, don't try to make up an answer. 
             Keep the answer as concise as possible. 
             {context}
-            Question: {question}
-            Helpful Answer:"""
+            Question: {question}"""
 
-            prompt_template = PromptTemplate(input_variables=['context', 'question'], template=template)
+            qa_chain_prompt = PromptTemplate.from_template(prompt_template)
 
-            # set up chain
-            chain = (
-                    {"context": retriever, "question": RunnablePassthrough()}
-                    | prompt_template
-                    | chat_model
-                    | StrOutputParser()
+            llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=True)
+
+            document_prompt = PromptTemplate(
+                input_variables=['page_content', 'source'],
+                template='Context:\ncontent:\n{page_content}\nsource:{source}\nrow:{row}',
             )
 
-        response = chain.invoke(prompt)
-        print(f'Result: {response}')
+            combine_documents_chain = StuffDocumentsChain(
+                llm_chain=llm_chain,
+                document_variable_name='context',
+                document_prompt=document_prompt,
+                callbacks=None,
+            )
 
-        '''
-        chain = RetrievalQAWithSourcesChain.from_chain_type(llm=chat_model,
-                                                            chain_type='stuff',
-                                                            retriever=retriever,
-                                                            return_source_documents=True,
-                                                            verbose=True
-                                                            )
+            qa = RetrievalQAWithSourcesChain(
+                combine_documents_chain=combine_documents_chain,
+                callbacks=None,
+                verbose=True,
+                retriever=retriever,
+                return_source_documents=True,
+            )
 
-        # run chain
-        response = chain({'question': prompt})
-        '''
+            response = qa(user_prompt)
+            print(response)
+            print(response['answer'])
 
         # Display assistant response in chat message container
         with st.chat_message('assistant'):
-            st.markdown(response)
+            st.markdown(response['answer'])
 
         # Add user and assistant messages to chat history
-        st.session_state.messages.append({'role': 'user', 'content': prompt})
-        st.session_state.messages.append({'role': 'assistant', 'content': response})
+        st.session_state.messages.append({'role': 'user', 'content': user_prompt})
+        st.session_state.messages.append({'role': 'assistant', 'content': response['answer']})
+
+    else:
+        pass
