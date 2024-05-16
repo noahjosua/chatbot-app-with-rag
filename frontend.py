@@ -1,5 +1,6 @@
 import streamlit as st
 from langchain.prompts import PromptTemplate
+from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
 from langchain_core.output_parsers import StrOutputParser
 from langchain_core.runnables import RunnablePassthrough
 
@@ -28,35 +29,43 @@ def chat_history(chat_model, retriever):
         with st.chat_message('user'):
             st.markdown(prompt)
 
-        with st.spinner('Thinking...'):
-            response = chat_model.invoke(prompt)
-
+        with (st.spinner('Thinking...')):
             template = """Use the following pieces of context to answer the question at the end. 
             If you don't know the answer, just say that you don't know, don't try to make up an answer. 
-            Use three sentences maximum and keep the answer as concise as possible. 
+            Keep the answer as concise as possible. 
             {context}
             Question: {question}
             Helpful Answer:"""
-            qa_chain_prompt = PromptTemplate(input_variables=['context', 'question'], template=template)
 
-            docs = retriever.invoke(prompt)
-            helper.print_docs_for_question(docs)
+            prompt_template = PromptTemplate(input_variables=['context', 'question'], template=template)
 
             # set up chain
             chain = (
                     {"context": retriever, "question": RunnablePassthrough()}
-                    | qa_chain_prompt
+                    | prompt_template
                     | chat_model
                     | StrOutputParser()
             )
 
-            response = chain.invoke(prompt)
-            print(f'Result: {response}')
+        response = chain.invoke(prompt)
+        print(f'Result: {response}')
 
-            # Display assistant response in chat message container
-            with st.chat_message('assistant'):
-                st.markdown(response)
+        '''
+        chain = RetrievalQAWithSourcesChain.from_chain_type(llm=chat_model,
+                                                            chain_type='stuff',
+                                                            retriever=retriever,
+                                                            return_source_documents=True,
+                                                            verbose=True
+                                                            )
 
-            # Add user and assistant messages to chat history
-            st.session_state.messages.append({'role': 'user', 'content': prompt})
-            st.session_state.messages.append({'role': 'assistant', 'content': response})
+        # run chain
+        response = chain({'question': prompt})
+        '''
+
+        # Display assistant response in chat message container
+        with st.chat_message('assistant'):
+            st.markdown(response)
+
+        # Add user and assistant messages to chat history
+        st.session_state.messages.append({'role': 'user', 'content': prompt})
+        st.session_state.messages.append({'role': 'assistant', 'content': response})

@@ -1,5 +1,4 @@
 # pip install pipenv
-# pip install
 # pipenv install python-dotenv
 # pipenv install langchain
 
@@ -42,7 +41,6 @@
     # implementieren
         https://python.langchain.com/v0.1/docs/modules/data_connection/vectorstores/
         --> doch FAISS, weil man für Chroma Microsoft C++ Build Tools installieren muss (dependency chroma-hnswlib)
-        pipenv install faiss-cpu
     # TODO einstellen: https://python.langchain.com/v0.1/docs/integrations/vectorstores/faiss/
 
 # Vector store als retriever
@@ -60,18 +58,27 @@
                 temperature=0.3,
                 repetition_penalty=1.1
 
+# Prompt Template
+    # https://python.langchain.com/v0.1/docs/modules/model_io/prompts/
+    # https://python.langchain.com/v0.1/docs/modules/model_io/prompts/quick_start/
+    https://api.python.langchain.com/en/latest/chains/langchain.chains.retrieval_qa.base.RetrievalQA.html#langchain.chains.retrieval_qa.base.RetrievalQA (meine aktuelle Chain)
+    # https://medium.com/@iryna230520/first-steps-in-langchain-the-ultimate-guide-for-beginners-part-1-2baf5a4e1b81
+    --> erstmal bei normalem PromptTemplate belassen, weil das bisher super funktioniert
+
+--> pip install pipenv
+--> pipenv install python-dotenv langchain langchain-community faiss-cpu huggingface_hub transformers jinja2 streamlit sentence-transformers
 
 TODO
-# Prompt Template und Chain
-# https://python.langchain.com/v0.1/docs/modules/model_io/prompts/ --> https://python.langchain.com/v0.1/docs/modules/model_io/prompts/quick_start/!
+# Chains
 # https://python.langchain.com/v0.1/docs/modules/chains/
+    --> RetrievalQAWithSourcesChain vs. load_qa_with_sources_chain: Ich möchte ersters
 
 # Chat History: https://python.langchain.com/v0.1/docs/use_cases/question_answering/chat_history/
 # Chatbots: https://python.langchain.com/v0.1/docs/use_cases/chatbots/
 
 # LLM Werte einstellen
 # Vector Store einstellen
-# Retriever einstellen und evaluieren
+# Retriever einstellen und evaluieren (Quellen mit zurück geben)
 
 # context (in bezug auf vorherige frage(n)) funktioniert noch nicht
 
@@ -83,5 +90,3 @@ TODO
 
 # Präsentation: 20 min
 # Doku: 5 Seiten --> gespeicherte Quellen und Order auf Laptop-Desktop nochmal durchgehen
-
-
