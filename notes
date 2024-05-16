@@ -63,12 +63,11 @@
 
 TODO
 # Prompt Template und Chain
-# https://python.langchain.com/v0.1/docs/modules/model_io/prompts/
+# https://python.langchain.com/v0.1/docs/modules/model_io/prompts/ --> https://python.langchain.com/v0.1/docs/modules/model_io/prompts/quick_start/!
 # https://python.langchain.com/v0.1/docs/modules/chains/
 
 # Chat History: https://python.langchain.com/v0.1/docs/use_cases/question_answering/chat_history/
 # Chatbots: https://python.langchain.com/v0.1/docs/use_cases/chatbots/
-# Chat Models: https://python.langchain.com/v0.1/docs/modules/model_io/chat/
 
 # LLM Werte einstellen
 # Vector Store einstellen
@@ -76,10 +75,13 @@ TODO
 
 # context (in bezug auf vorherige frage(n)) funktioniert noch nicht
 
-# alles in .env auslagern
-# kleines Modell gegen großes Modell testen, welches hat wo wie performt?
-# Lessons Learned: authentifizierung zu hugging face, dokus richtig lesen erspart arbeit
+# alles in .env auslagern // code aufräumen und auseinanderziehen
+# kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?
+# Lessons Learned:
+    authentifizierung zu hugging face
+    dokus richtig lesen erspart arbeit
+
 # Präsentation: 20 min
-# Doku: 5 Seiten
+# Doku: 5 Seiten --> gespeicherte Quellen und Order auf Laptop-Desktop nochmal durchgehen
 
 
