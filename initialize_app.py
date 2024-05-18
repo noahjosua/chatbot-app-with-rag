@@ -11,6 +11,7 @@ from langchain_community.chat_models.huggingface import ChatHuggingFace
 
 from huggingface_hub import login
 
+import helper
 from helper import *
 
 
@@ -21,7 +22,6 @@ def initialize_app():
     # load documents
     loader = CSVLoader(file_path='netflix_titles.csv', encoding='utf-8')
     documents = loader.load()
-    print_loaded_documents(documents)
 
     # split documents into chunks
     text_splitter = RecursiveCharacterTextSplitter(
@@ -30,13 +30,13 @@ def initialize_app():
         length_function=len
     )
     chunks = text_splitter.split_documents(documents)
-    print_split_documents(chunks)
+    modified_chunks = helper.modify_metadata(chunks)
 
     # set up embeddings model
     embeddings = SentenceTransformerEmbeddings(model_name='all-MiniLM-L6-v2') # api_key=hugging_face_api_key
 
     # set up vector db
-    vector_store = FAISS.from_documents(chunks, embeddings)
+    vector_store = FAISS.from_documents(modified_chunks, embeddings)
     # print(vector_store.index.ntotal)
 
     # set up retriever

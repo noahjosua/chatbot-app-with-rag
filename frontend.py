@@ -44,7 +44,7 @@ def chat_history(chat_model, retriever):
 
             document_prompt = PromptTemplate(
                 input_variables=['page_content', 'source'],
-                template='Context:\ncontent:\n{page_content}\nsource:{source}\nrow:{row}',
+                template='Content:\n{page_content}\nSource:{source}',
             )
 
             combine_documents_chain = StuffDocumentsChain(
@@ -63,16 +63,26 @@ def chat_history(chat_model, retriever):
             )
 
             response = qa(user_prompt)
-            print(response)
-            print(response['answer'])
+
+            # Extract and format sources from source_documents
+            sources = [
+                f"Document with title {doc.metadata['source'].replace('document: ', '')}, Entry with show_id: {doc.metadata['show_id']}"
+                for doc in response['source_documents']]
+
+            # Update the response with formatted sources
+            response['sources'] = sources
+
+            formatted_answer = f"{response['answer']}\n\n**Used context to answer your question:**\n\n"
+            for source in response['sources']:
+                formatted_answer += f"- {source}\n\n"
 
         # Display assistant response in chat message container
         with st.chat_message('assistant'):
-            st.markdown(response['answer'])
+            st.markdown(formatted_answer)
 
         # Add user and assistant messages to chat history
         st.session_state.messages.append({'role': 'user', 'content': user_prompt})
-        st.session_state.messages.append({'role': 'assistant', 'content': response['answer']})
+        st.session_state.messages.append({'role': 'assistant', 'content': formatted_answer})
 
     else:
         pass

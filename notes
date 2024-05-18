@@ -64,6 +64,9 @@
     # https://api.python.langchain.com/en/latest/chains/langchain.chains.retrieval_qa.base.RetrievalQA.html --> langchain.chains.retrieval_qa.base.RetrievalQA (meine aktuelle Chain)
     # https://medium.com/@iryna230520/first-steps-in-langchain-the-ultimate-guide-for-beginners-part-1-2baf5a4e1b81
     # https://nakamasato.medium.com/enhancing-langchains-retrievalqa-for-real-source-links-53713c7d802a
+    # https://www.comet.com/site/blog/introduction-to-prompt-templates-in-langchain/
+    # https://www.freecodecamp.org/news/beginners-guide-to-langchain/
+    # https://nanonets.com/blog/langchain/
 
 # Chains
 # https://python.langchain.com/v0.1/docs/modules/chains/
@@ -72,10 +75,12 @@
 --> pip install pipenv
 --> pipenv install python-dotenv langchain langchain-community faiss-cpu huggingface_hub transformers jinja2 streamlit sentence-transformers
 
+# metadata bei initialisierung der app modifizieren
+# Quellen in Antwort miteinschließen und anständig formatieren
+
 TODO
 
-# Source so formartieren, dass sie in der Antwort gut angezeigt wird.
-
+# https://www.restack.io/docs/langchain-knowledge-langchain-chatprompttemplate-guide
 
 # Chat History: https://python.langchain.com/v0.1/docs/use_cases/question_answering/chat_history/
 # Chatbots: https://python.langchain.com/v0.1/docs/use_cases/chatbots/
