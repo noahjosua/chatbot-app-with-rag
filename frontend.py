@@ -37,6 +37,19 @@ def chat_history(chat_model, retriever):
         for msg in st.session_state.chat_history:
             print(msg)
 
+        contextualize_system_prompt = """Create a self-contained question from a given user prompt, 
+        considering possible references to previous chat history. 
+        The aim is for the question to be comprehensible without the need for the context provided by the chat history. 
+        Please refrain from answering the question; simply adjust its wording if necessary, otherwise leave it unchanged.
+        Chat History: {chat_history}
+        User Prompt: {user_prompt}"""
+
+        contextualize_system_prompt_template = PromptTemplate.from_template(contextualize_system_prompt)
+        contextualize_chain = LLMChain(llm=chat_model, prompt=contextualize_system_prompt_template, callbacks=None, verbose=True)
+
+        rephrased_user_prompt = contextualize_chain.invoke({'chat_history': chat_history_text, 'user_prompt': user_prompt})['text']
+        print(rephrased_user_prompt)
+
         with (st.spinner('Thinking...')):
 
             template = """
@@ -92,8 +105,8 @@ def chat_history(chat_model, retriever):
                 return_source_documents=True,
             )
 
-            response = qa({'question': user_prompt, 'chat_history': chat_history_text})
-            print(response)
+            response = qa({'question': rephrased_user_prompt, 'chat_history': chat_history_text})
+            # print(response)
 
             # Extract and format sources from source_documents
             sources = [
