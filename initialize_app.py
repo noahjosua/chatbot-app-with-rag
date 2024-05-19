@@ -10,7 +10,6 @@ from langchain_community.llms import HuggingFaceEndpoint
 from langchain_community.chat_models.huggingface import ChatHuggingFace
 
 from huggingface_hub import login
-
 import helper
 from helper import *
 
@@ -33,17 +32,17 @@ def initialize_app():
     modified_chunks = helper.modify_metadata(chunks)
 
     # set up embeddings model
-    embeddings = SentenceTransformerEmbeddings(model_name='all-MiniLM-L6-v2') # api_key=hugging_face_api_key
+    embeddings = SentenceTransformerEmbeddings(model_name='all-MiniLM-L6-v2')  # api_key=hugging_face_api_key
 
     # set up vector db
     vector_store = FAISS.from_documents(modified_chunks, embeddings)
     # print(vector_store.index.ntotal)
 
     # set up retriever
-    retriever = vector_store.as_retriever() # By default, the vector store retriever uses similarity search
+    retriever = vector_store.as_retriever()  # By default, the vector store retriever uses similarity search
 
     # set up LLM
-    login(hugging_face_api_key) # TODO verstehen, wozu das gebraucht wird
+    login(hugging_face_api_key)  # TODO verstehen, wozu das gebraucht wird
     llm = HuggingFaceEndpoint(
         repo_id='mistralai/Mistral-7B-Instruct-v0.2',
         huggingfacehub_api_token=hugging_face_api_key,

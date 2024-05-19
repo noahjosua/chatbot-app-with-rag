@@ -78,18 +78,21 @@
 # metadata bei initialisierung der app modifizieren
 # Quellen in Antwort miteinschließen und anständig formatieren
 
-TODO
-
 # https://www.restack.io/docs/langchain-knowledge-langchain-chatprompttemplate-guide
-
 # Chat History: https://python.langchain.com/v0.1/docs/use_cases/question_answering/chat_history/
 # Chatbots: https://python.langchain.com/v0.1/docs/use_cases/chatbots/
+# History mit einbeziehen --> # context (in bezug auf vorherige frage(n)) funktioniert
 
+
+
+TODO
+
+# Chat Template: jinja2.exceptions.TemplateError: Conversation roles must alternate user/assistant/user/assistant/...
 # LLM Werte einstellen
 # Vector Store einstellen
 # Retriever einstellen und evaluieren (Quellen mit zurück geben)
 
-# context (in bezug auf vorherige frage(n)) funktioniert noch nicht
+# verschiedene datensets reinklatschen
 
 # alles in .env auslagern // code aufräumen und auseinanderziehen
 # kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?

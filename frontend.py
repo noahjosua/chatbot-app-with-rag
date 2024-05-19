@@ -3,8 +3,7 @@ from langchain.prompts import PromptTemplate
 from langchain.chains.llm import LLMChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
-from langchain_core.output_parsers import StrOutputParser
-from langchain_core.runnables import RunnablePassthrough
+from langchain_core.prompts import ChatPromptTemplate
 
 import helper
 
@@ -13,6 +12,8 @@ def initialize_frontend():
     # Initialize chat history
     if 'messages' not in st.session_state:
         st.session_state.messages = []
+    if 'chat_history' not in st.session_state:
+        st.session_state.chat_history = []
 
     st.header('My Chatbot')
     with st.chat_message('assistant'):
@@ -31,14 +32,43 @@ def chat_history(chat_model, retriever):
         with st.chat_message('user'):
             st.markdown(user_prompt)
 
+        chat_history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in st.session_state.chat_history])
+
+        for msg in st.session_state.chat_history:
+            print(msg)
+
         with (st.spinner('Thinking...')):
-            prompt_template = """Use the following pieces of context to answer the question at the end. 
+
+            template = """
+            Use the following pieces of retrieved context as well as the chat history to answer the question 
+            (which might reference context in the chat history). 
             If you don't know the answer, just say that you don't know, don't try to make up an answer. 
             Keep the answer as concise as possible. 
-            {context}
-            Question: {question}"""
+            Context:\n {context}
+            Chat History:\n {chat_history}
+            Question:\n {question}
+            """
 
-            qa_chain_prompt = PromptTemplate.from_template(prompt_template)
+            '''
+            system_prompt_template = """
+            Use the following pieces of retrieved context as well as the chat history to answer the question 
+            (which might reference context in the chat history). 
+            If you don't know the answer, just say that you don't know, don't try to make up an answer. 
+            Keep the answer as concise as possible. 
+            Context: {context}
+            Chat History: {chat_history}
+            """
+
+            human_prompt_template = "[INST]{question}[/INST]"
+
+            qa_chain_prompt = ChatPromptTemplate.from_messages(
+                [
+                    ('system', system_prompt_template),
+                    ('human', human_prompt_template),
+                ]
+            )
+            '''
+            qa_chain_prompt = PromptTemplate.from_template(template)
 
             llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=True)
 
@@ -62,7 +92,8 @@ def chat_history(chat_model, retriever):
                 return_source_documents=True,
             )
 
-            response = qa(user_prompt)
+            response = qa({'question': user_prompt, 'chat_history': chat_history_text})
+            print(response)
 
             # Extract and format sources from source_documents
             sources = [
@@ -83,6 +114,8 @@ def chat_history(chat_model, retriever):
         # Add user and assistant messages to chat history
         st.session_state.messages.append({'role': 'user', 'content': user_prompt})
         st.session_state.messages.append({'role': 'assistant', 'content': formatted_answer})
+        st.session_state.chat_history.append({'role': 'user', 'content': user_prompt})
+        st.session_state.chat_history.append({'role': 'assistant', 'content': response['answer']})
 
     else:
         pass
