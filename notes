@@ -45,6 +45,7 @@
 
 # Vector store als retriever
       https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/
+      https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/
     # TODO einstellen: https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/#maximum-marginal-relevance-retrieval
     # TODO evaluation
 
@@ -83,19 +84,33 @@
 # Chatbots: https://python.langchain.com/v0.1/docs/use_cases/chatbots/
 # History mit einbeziehen --> # context (in bezug auf vorherige frage(n)) funktioniert
 
+# resolve Chat Template: jinja2.exceptions.TemplateError: Conversation roles must alternate user/assistant/user/assistant/...
 
+# retriever einstellen
+    # data preprocessing
+    # dann anhand der query mit k und score_threshold rumspielen (How many seasons does each TV show listed in the dataset have, and what are their respective release years?)
+
+# ich bekomme den richtigen kontext aber das llm kann nicht zählen?
 
 TODO
-
-# Chat Template: jinja2.exceptions.TemplateError: Conversation roles must alternate user/assistant/user/assistant/...
-
-# retriever muss eingestellt werden
-    # How many seasons does each TV show listed in the dataset have, and what are their respective release years? --> ich bekomme nur 4 antworten. die sind zwar richtig aber nicht vollständig - es gibt mehr
 
 # die ganzen deprecated warnings auslöschen
 # LLM Werte einstellen
 # Vector Store einstellen
-# Retriever einstellen und evaluieren (Quellen mit zurück geben)
+
+# Retriever einstellen und evaluieren
+    # 1. Evaluationsmetrik: sind retrievte Docs relevant für Frage? mittels Testdatenset, ground of truth
+        # anzahl der zurückgegebenen dokumenten ändern, ähnlichkeitsschwelle ändern
+        # andere retrievermethode?
+        # vektorisierung der dokumente und fragen korrekt durchgeführt?
+        # vorverarbeitung der daten anpassen?
+        # anderes embeddings model?
+        # muss retriever anders eingestellt werden?
+        # müssen daten anders aufbereitet werden, bevor sie in DB kommen?
+    # 2. Evaluationsmetrik: passt die antwort des LLM zu den retrievten Docs?
+        # wie sind prompts geschrieben?
+    # 3. Evaluationsmetrik: passt die antwort des LLM zu der userfrage?
+
 
 # verschiedene datensets reinklatschen
 

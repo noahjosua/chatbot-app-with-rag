@@ -39,55 +39,40 @@ def chat_history(chat_model, retriever):
 
         contextualize_system_prompt = """Create a self-contained question from a given user prompt, 
         considering possible references to previous chat history. 
-        The aim is for the question to be comprehensible without the need for the context provided by the chat history. 
+        If the user's prompt is unrelated to the chat history, leave it unchanged.
+        If the user's prompt references the chat history, rephrase the question to make it comprehensible without 
+        the need for the context provided by the chat history.
         Please refrain from answering the question; simply adjust its wording if necessary, otherwise leave it unchanged.
         Chat History: {chat_history}
         User Prompt: {user_prompt}"""
 
         contextualize_system_prompt_template = PromptTemplate.from_template(contextualize_system_prompt)
-        contextualize_chain = LLMChain(llm=chat_model, prompt=contextualize_system_prompt_template, callbacks=None, verbose=True)
+        contextualize_chain = LLMChain(llm=chat_model, prompt=contextualize_system_prompt_template, callbacks=None,
+                                       verbose=True)
 
-        rephrased_user_prompt = contextualize_chain.invoke({'chat_history': chat_history_text, 'user_prompt': user_prompt})['text']
+        rephrased_user_prompt = \
+            contextualize_chain.invoke({'chat_history': chat_history_text, 'user_prompt': user_prompt})['text']
         print(rephrased_user_prompt)
 
         with (st.spinner('Thinking...')):
 
             template = """
-            Use the following pieces of retrieved context as well as the chat history to answer the question 
-            (which might reference context in the chat history). 
-            If you don't know the answer, just say that you don't know, don't try to make up an answer. 
-            Keep the answer as concise as possible. 
+            User: {question}
+            Assistant: Use the following pieces of retrieved context as well as the chat history to answer the question 
+            (which might reference context in the chat history). If you don't know the answer, 
+            just say that you don't know, don't try to make up an answer. 
+            If you don't get context, don't refer to it in your answer. Keep the answer as concise as possible.
             Context:\n {context}
             Chat History:\n {chat_history}
-            Question:\n {question}
             """
 
-            '''
-            system_prompt_template = """
-            Use the following pieces of retrieved context as well as the chat history to answer the question 
-            (which might reference context in the chat history). 
-            If you don't know the answer, just say that you don't know, don't try to make up an answer. 
-            Keep the answer as concise as possible. 
-            Context: {context}
-            Chat History: {chat_history}
-            """
-
-            human_prompt_template = "[INST]{question}[/INST]"
-
-            qa_chain_prompt = ChatPromptTemplate.from_messages(
-                [
-                    ('system', system_prompt_template),
-                    ('human', human_prompt_template),
-                ]
-            )
-            '''
-            qa_chain_prompt = PromptTemplate.from_template(template)
+            qa_chain_prompt = ChatPromptTemplate.from_template(template)
 
             llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=True)
 
             document_prompt = PromptTemplate(
                 input_variables=['page_content', 'source'],
-                template='Content:\n{page_content}\nSource:{source}',
+                template='Content:\n{page_content}\nMetadata:{source}',
             )
 
             combine_documents_chain = StuffDocumentsChain(
@@ -106,19 +91,21 @@ def chat_history(chat_model, retriever):
             )
 
             response = qa({'question': rephrased_user_prompt, 'chat_history': chat_history_text})
-            # print(response)
 
             # Extract and format sources from source_documents
             sources = [
-                f"Document with title {doc.metadata['source'].replace('document: ', '')}, Entry with show_id: {doc.metadata['show_id']}"
+                f"Document with title '{doc.metadata['source']['document_title']}', Entry with show_id '{doc.metadata['source']['show_id']}'"
                 for doc in response['source_documents']]
 
             # Update the response with formatted sources
             response['sources'] = sources
 
-            formatted_answer = f"{response['answer']}\n\n**Used context to answer your question:**\n\n"
-            for source in response['sources']:
-                formatted_answer += f"- {source}\n\n"
+            if len(sources) > 0:
+                formatted_answer = f"{response['answer']}\n\n**Used context to answer your question:**\n\n"
+                for source in sources:
+                    formatted_answer += f"- {source}\n\n"
+            else:
+                formatted_answer = f"{response['answer']}\n\nThere are no documents that could be used to answer your question."
 
         # Display assistant response in chat message container
         with st.chat_message('assistant'):
@@ -129,6 +116,5 @@ def chat_history(chat_model, retriever):
         st.session_state.messages.append({'role': 'assistant', 'content': formatted_answer})
         st.session_state.chat_history.append({'role': 'user', 'content': user_prompt})
         st.session_state.chat_history.append({'role': 'assistant', 'content': response['answer']})
-
     else:
         pass
