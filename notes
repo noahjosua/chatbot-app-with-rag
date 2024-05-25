@@ -50,7 +50,7 @@
     # TODO evaluation
 
 # Welches LLM? --> https://huggingface.co/chat/models
-    https://huggingface.co/CohereForAI/c4ai-command-r-plus
+    https://huggingface.co/CohereForAI/c4ai-command-r-plus --> braucht pro subscription
     oder
     https://huggingface.co/mistralai/Mistral-7B-Instruct-v0.2
     # erstmal richtwerte:
@@ -91,6 +91,8 @@
     # dann anhand der query mit k und score_threshold rumspielen (How many seasons does each TV show listed in the dataset have, and what are their respective release years?)
 
 # ich bekomme den richtigen kontext aber das llm kann nicht zählen?
+# qa model ausprobieren --> führt aber nicht zum gewünschten ergebnis
+
 
 TODO
 

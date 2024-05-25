@@ -118,3 +118,5 @@ def chat_history(chat_model, retriever):
         st.session_state.chat_history.append({'role': 'assistant', 'content': response['answer']})
     else:
         pass
+
+# 2, 3, 4, 5, 6, 9 How many entries are listed as TV Show?
