@@ -5,8 +5,6 @@ from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
 from langchain_core.prompts import ChatPromptTemplate
 
-import helper
-
 
 def initialize_frontend():
     # Initialize chat history

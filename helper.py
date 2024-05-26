@@ -1,6 +1,3 @@
-import os
-
-
 def modify_metadata(chunks, keys_to_keep):
     modified_chunks = []
 
