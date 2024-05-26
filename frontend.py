@@ -72,7 +72,7 @@ def chat_history(chat_model, retriever):
 
             document_prompt = PromptTemplate(
                 input_variables=['page_content', 'source'],
-                template='Content:\n{page_content}\nMetadata:{source}',
+                template='{page_content}\n{source}\n',
             )
 
             combine_documents_chain = StuffDocumentsChain(
@@ -94,7 +94,7 @@ def chat_history(chat_model, retriever):
 
             # Extract and format sources from source_documents
             sources = [
-                f"Document with title '{doc.metadata['source']['document_title']}', Entry with show_id '{doc.metadata['source']['show_id']}'"
+                f"Entry with '{doc.metadata['source']['show_id']}'"
                 for doc in response['source_documents']]
 
             # Update the response with formatted sources
@@ -119,4 +119,4 @@ def chat_history(chat_model, retriever):
     else:
         pass
 
-# 2, 3, 4, 5, 6, 9 How many entries are listed as TV Show?
+# 2, 3, 4, 5, 6, 9 How many entries are of type TV Show?

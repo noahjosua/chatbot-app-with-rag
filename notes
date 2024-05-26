@@ -93,6 +93,11 @@
 # ich bekomme den richtigen kontext aber das llm kann nicht zählen?
 # qa model ausprobieren --> führt aber nicht zum gewünschten ergebnis
 
+# adding contextual compression ausprobieren
+# anderes embeddings model ausprobieren Cohere
+# anderen vector store ausprobieren DeepLake
+
+
 
 TODO
 
