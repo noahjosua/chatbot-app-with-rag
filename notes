@@ -97,6 +97,7 @@
 # anderes embeddings model ausprobieren Cohere
 # anderen vector store ausprobieren DeepLake
 
+# prompt engineering vollkommen underrated
 
 
 TODO
@@ -121,7 +122,6 @@ TODO
 
 # verschiedene datensets reinklatschen
 
-# alles in .env auslagern // code aufräumen und auseinanderziehen
 # kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?
 # Lessons Learned:
     authentifizierung zu hugging face
