@@ -105,14 +105,22 @@
                 # https://www.kaggle.com/datasets/eyadgk/lamini-taylor-swift?resource=download
 # chunk size und overlap nochmal anpassen
 
+# retriever anders eingestellt und system prompt angepasst --> es wurden irrelevante dokumente aus dem store geholt und fragen zu denen es keinerlei info im datensatz gibt wurden beantwortet
+
+            #retriever = vector_store.as_retriever(search_type=constants.SEARCH_TYPE,
+                                                 # search_kwargs={constants.K_KEY: 5})
+
+            retriever = vector_store.as_retriever(search_type='similarity_score_threshold',
+                                                  search_kwargs={constants.K_KEY: 4, 'score_threshold': 0.5})
+
 
 TODO
-
----> anderer datensatz...anderes Model?
+# chat history defekt?
+# anzeige anpassen, wenn array leer
+# manchmal werden in der antwort die rollen mit angezeigt?! why
 
 # die ganzen deprecated warnings auslöschen
-# LLM Werte einstellen
-# Vector Store einstellen
+
 
 ### NICHT LÖSCHEN --> WICHTIG FÜR BERICHT
 # Retriever einstellen und evaluieren
@@ -130,7 +138,6 @@ TODO
 
 
 # verschiedene datensets reinklatschen
-
 # kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?
 
 

@@ -6,31 +6,26 @@ from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesCha
 from langchain_core.prompts import ChatPromptTemplate
 
 import constants
-import helper
+from frontend import chat_utils
+from helper import print_to_console
 
 
 def chat_flow(chat_model, retriever):
     if user_prompt := st.chat_input(constants.CHAT_INPUT):
-
-        # Display user message in chat message container
         with st.chat_message(constants.ROLE_USER):
             st.markdown(user_prompt)
 
-        with (st.spinner(constants.SPINNER_LABEL)):
-
-            # construct chat history
+        with ((st.spinner(constants.SPINNER_LABEL))):
             chat_history_text = '\n'.join(
                 [f'{msg[constants.ROLE]}: {msg[constants.MESSAGE_CONTENT_KEY]}' for msg in st.session_state.chat_flow])
 
-            # rephrase user prompt if necessary
-            rephrased_user_prompt = helper.rephrase_user_prompt_if_necessary(chat_model, chat_history_text, user_prompt)
+            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model, chat_history_text,
+                                                                                 user_prompt)
 
-            # load template for system prompt
             template_system_prompt = constants.TEMPLATE_SYSTEM_PROMPT
             qa_chain_prompt = ChatPromptTemplate.from_template(template_system_prompt)
             llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=True)
 
-            # construct document prompt and chains
             document_prompt = PromptTemplate(
                 input_variables=[constants.DOCUMENT_PAGE_CONTENT_KEY, constants.DOCUMENT_SOURCE_KEY],
                 template=constants.DOCUMENT_PROMPT_TEMPLATE,
@@ -49,29 +44,16 @@ def chat_flow(chat_model, retriever):
                 return_source_documents=True,
             )
 
-            # invoke RetrievalQAWithSourcesChain with rephrased user prompt and chat history
             response = qa(
                 {constants.QA_USER_PROMPT_KEY: rephrased_user_prompt, constants.CHAT_HISTORY_KEY: chat_history_text})
 
-            # handle sources
-            updated_response = helper.handle_sources(response)
+            updated_response = chat_utils.extract_and_format_sources(response)
+            formatted_answer = chat_utils.format_answer_for_ui(updated_response)
 
-            # format answer
-            formatted_answer = helper.format_answer_for_ui(updated_response)
-
-        # Display assistant response in chat message container
         with st.chat_message(constants.ROLE_ASSISTANT):
             st.markdown(formatted_answer)
 
-        # Add user and assistant messages to chat history
-        st.session_state.messages.append(
-            {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
-        st.session_state.messages.append(
-            {constants.ROLE: constants.ROLE_ASSISTANT, constants.MESSAGE_CONTENT_KEY: formatted_answer})
-        st.session_state.chat_flow.append(
-            {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
-        st.session_state.chat_flow.append({constants.ROLE: constants.ROLE_ASSISTANT,
-                                           constants.MESSAGE_CONTENT_KEY: response[constants.RESPONSE_ANSWER_KEY]})
+        chat_utils.add_messages_to_history(user_prompt, formatted_answer, response)
+        print_to_console.print_chat_history()
     else:
         pass
-

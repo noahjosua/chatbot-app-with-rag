@@ -1,3 +1,5 @@
+'''
+
 import pandas as pd
 
 
@@ -8,3 +10,5 @@ def generate_answers_to_questions():
     for index, row in dataframe.iterrows():
         question = row['generated_question']
         print(f"{index}, {question}")
+
+        '''

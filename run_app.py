@@ -2,7 +2,7 @@ import subprocess
 
 
 def run_streamlit():
-    subprocess.run(['streamlit', 'run', '.\\01_main.py'])
+    subprocess.run(['streamlit', 'run', '.\\main.py'])
 
 
 if __name__ == "__main__":

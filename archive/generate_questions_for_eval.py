@@ -1,3 +1,4 @@
+'''
 import os  # Operating system functionalities
 from dotenv import load_dotenv  # Environment variable handling
 from huggingface_hub import login
@@ -72,3 +73,4 @@ def setup():
     questions_df = pd.DataFrame({'generated_question': questions})
     questions_df.to_csv('generated_questions.csv', index=True)
     print("Questions generated and saved to generated_questions.csv")
+'''
