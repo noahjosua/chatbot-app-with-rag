@@ -37,7 +37,8 @@ def initial_setup():
 
     chunks = text_splitter.split_documents(documents)
     helper.print_split_documents(chunks)
-    modified_chunks = helper.modify_metadata(chunks, [constants.DOCUMENT_SHOW_ID_KEY, 'document_title'])
+    modified_chunks = helper.modify_metadata(chunks,
+                                             [constants.DOCUMENT_SHOW_ID_KEY, constants.DOCUMENT_DOCUMENT_TITLE_KEY])
 
     # Set up embeddings model
     embeddings = SentenceTransformerEmbeddings(model_name=constants.EMBEDDINGS_MODEL_NAME)

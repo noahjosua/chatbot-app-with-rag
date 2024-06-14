@@ -18,6 +18,7 @@ ROLE_USER = 'user'
 USER_PROMPT_KEY = 'user_prompt'
 TEXT_KEY = 'text'
 
+DOCUMENT_DOCUMENT_TITLE_KEY = 'document_title'
 DOCUMENT_PAGE_CONTENT_KEY = 'page_content'
 DOCUMENT_SOURCE_KEY = 'source'
 DOCUMENT_SHOW_ID_KEY = 'show_id'
@@ -60,6 +61,7 @@ FORMATTED_ANSWER_WITHOUT_CONTEXT = '\n\nThere are no documents that could be use
 
 ### PREPROCESS DATASET ###
 DATASET = 'netflix_titles.csv'
+DATASET_EVAL = 'netflix_titles_subset_for_eval.csv'
 REPLACEMENT_NAN_VALUES = 'unknown'
 
 ### INITIAL SETUP ###

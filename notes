@@ -99,6 +99,9 @@
 
 # prompt engineering vollkommen underrated
 
+# Evaluation von Retriever: 
+
+
 
 TODO
 
@@ -106,6 +109,7 @@ TODO
 # LLM Werte einstellen
 # Vector Store einstellen
 
+### NICHT LÖSCHEN --> WICHTIG FÜR BERICHT
 # Retriever einstellen und evaluieren
     # 1. Evaluationsmetrik: sind retrievte Docs relevant für Frage? mittels Testdatenset, ground of truth
         # anzahl der zurückgegebenen dokumenten ändern, ähnlichkeitsschwelle ändern
