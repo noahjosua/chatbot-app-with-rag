@@ -4,21 +4,22 @@ from langchain_core.prompts import PromptTemplate
 import constants
 
 
-def modify_metadata(chunks, keys_to_keep):
+def modify_metadata(chunks): #, keys_to_keep):
     modified_chunks = []
 
     for chunk in chunks:
-        original_metadata = chunk.metadata
+        # original_metadata = chunk.metadata
 
         # Retain only the specified keys in the metadata
-        modified_metadata = {key: original_metadata[key] for key in keys_to_keep if key in original_metadata}
+        # modified_metadata = {key: original_metadata[key] for key in keys_to_keep if key in original_metadata}
 
         # Create a new dictionary with the 'source' key holding the modified_metadata
-        new_metadata = {constants.DOCUMENT_SOURCE_KEY: modified_metadata}
+        new_metadata = {constants.DOCUMENT_SOURCE_KEY: chunk.metadata}
 
         # Update the document with the modified metadata
         chunk.metadata = new_metadata
         modified_chunks.append(chunk)
+        print(f"CHUNK: {chunk}")
     return modified_chunks
 
 
@@ -39,7 +40,7 @@ def rephrase_user_prompt_if_necessary(chat_model, chat_history_text, user_prompt
 def handle_sources(response):
     # Extract and format sources from source_documents
     sources = [
-        f"Entry with '{doc.metadata[constants.DOCUMENT_SOURCE_KEY][constants.DOCUMENT_SHOW_ID_KEY]}'"
+        f"Entry with '{doc.metadata[constants.DOCUMENT_SOURCE_KEY][constants.DOCUMENT_ID_KEY]}'"
         for doc in response[constants.RESPONSE_SOURCE_DOC_KEY]]
 
     # Update the response with formatted sources

@@ -1,6 +1,6 @@
 import constants
-from frontend.initialize import initialize_frontend
 from frontend.chat_flow import chat_flow
+from frontend.initialize import initialize_frontend
 from initial_setup import initial_setup
 import streamlit as st
 

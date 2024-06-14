@@ -75,4 +75,3 @@ def chat_flow(chat_model, retriever):
     else:
         pass
 
-# 2, 3, 4, 5, 6, 9 How many entries are of type TV Show?

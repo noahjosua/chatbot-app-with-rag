@@ -99,11 +99,16 @@
 
 # prompt engineering vollkommen underrated
 
-# Evaluation von Retriever: 
 
+# Evaluation von Retriever begonnen auf evaluations branch, dann beim versuch antworten zu erstellen:
+                # anderes Datenset lol. dann muss ich nicht selber ein testdatenset erstellen --> lesson learned --> mehr zeit in die auswahl der datensets stecken :/
+                # https://www.kaggle.com/datasets/eyadgk/lamini-taylor-swift?resource=download
+# chunk size und overlap nochmal anpassen
 
 
 TODO
+
+---> anderer datensatz...anderes Model?
 
 # die ganzen deprecated warnings auslöschen
 # LLM Werte einstellen
@@ -127,6 +132,10 @@ TODO
 # verschiedene datensets reinklatschen
 
 # kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?
+
+
+
+
 # Lessons Learned:
     authentifizierung zu hugging face
     dokus richtig lesen erspart arbeit
