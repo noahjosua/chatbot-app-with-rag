@@ -21,7 +21,7 @@ def setup_documents():
         length_function=len
     )
 
-    chunks = text_splitter.split_documents(documents)
+    chunks = text_splitter.split_documents(modified_documents)
     # print_to_console.print_split_documents(chunks)
     return _modify_metadata(chunks)
 

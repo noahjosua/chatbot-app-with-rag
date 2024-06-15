@@ -44,7 +44,7 @@ def _setup_llm():
     llm = HuggingFaceEndpoint(
         repo_id=constants.LLM_MODEL_NAME,
         huggingfacehub_api_token=hugging_face_api_key,
-        task=constants.LLM_TASK,  # question-answering
+        task=constants.LLM_TASK,
         max_new_tokens=512,
         top_k=50,
         temperature=0.3,

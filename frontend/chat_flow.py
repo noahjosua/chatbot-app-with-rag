@@ -17,8 +17,7 @@ def chat_flow(chat_model, retriever):
 
         with ((st.spinner(constants.SPINNER_LABEL))):
             chat_history = chat_utils.get_chat_history()
-            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model, chat_history,
-                                                                                 user_prompt)
+            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model,user_prompt)
 
             template_system_prompt = constants.TEMPLATE_SYSTEM_PROMPT
             qa_chain_prompt = ChatPromptTemplate.from_template(template_system_prompt)
