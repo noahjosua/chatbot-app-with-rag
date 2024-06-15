@@ -113,13 +113,16 @@
             retriever = vector_store.as_retriever(search_type='similarity_score_threshold',
                                                   search_kwargs={constants.K_KEY: 4, 'score_threshold': 0.5})
 
+# chat history funktioniert
+# contextualize raus, dafür prompt umformulieren lassen
+# anzeige anpassen, wenn array leer
+
+
 
 TODO
-# chat history defekt?
-# anzeige anpassen, wenn array leer
-# manchmal werden in der antwort die rollen mit angezeigt?! why
-
 # die ganzen deprecated warnings auslöschen
+# verschiedene datensets reinklatschen
+# kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?
 
 
 ### NICHT LÖSCHEN --> WICHTIG FÜR BERICHT
@@ -135,11 +138,6 @@ TODO
     # 2. Evaluationsmetrik: passt die antwort des LLM zu den retrievten Docs?
         # wie sind prompts geschrieben?
     # 3. Evaluationsmetrik: passt die antwort des LLM zu der userfrage?
-
-
-# verschiedene datensets reinklatschen
-# kleines Modell gegen großes Modell testen, welches hat wo wie performt? --> welche Metriken nutzen?
-
 
 
 

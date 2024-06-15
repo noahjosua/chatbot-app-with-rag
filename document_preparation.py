@@ -13,7 +13,7 @@ def setup_documents():
     loader = DataFrameLoader(dataframe, page_content_column=constants.DOCUMENT_PAGE_CONTENT_KEY)
     documents = loader.load()
     modified_documents = _strip_unnecessary_prefixes_from_metadata(documents)
-    print_to_console.print_loaded_documents(modified_documents)
+    # print_to_console.print_loaded_documents(modified_documents)
 
     text_splitter = RecursiveCharacterTextSplitter(
         chunk_size=800,
@@ -22,7 +22,7 @@ def setup_documents():
     )
 
     chunks = text_splitter.split_documents(documents)
-    print_to_console.print_split_documents(chunks)
+    # print_to_console.print_split_documents(chunks)
     return _modify_metadata(chunks)
 
 
@@ -35,7 +35,7 @@ def _create_dataframe(name_of_dataset):
     dataframe[constants.DOCUMENT_PAGE_CONTENT_KEY] = dataframe.apply(lambda r: '; '.join(r.astype(str).str.strip()),
                                                                      axis=1)
     pd.set_option('display.max_colwidth', None)
-    print_to_console.print_dataframe(dataframe)
+    # print_to_console.print_dataframe(dataframe)
     return dataframe
 
 
@@ -51,7 +51,7 @@ def _strip_unnecessary_prefixes_from_metadata(loaded_documents):
     for document in loaded_documents:
         processed_metadata = {key.split(': ')[0]: value.split(': ')[1] for key, value in document.metadata.items()}
         document.metadata = processed_metadata
-    print_to_console.print_documents_with_modified_metadata(loaded_documents)
+    # print_to_console.print_documents_with_modified_metadata(loaded_documents)
     return loaded_documents
 
 

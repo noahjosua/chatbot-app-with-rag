@@ -26,13 +26,12 @@ def _setup_vector_store():
     embeddings = SentenceTransformerEmbeddings(model_name=constants.EMBEDDINGS_MODEL_NAME)
 
     vector_store = FAISS.from_documents(modified_chunks, embeddings)
-    print_to_console.print_vector_store_content(vector_store)
+    # print_to_console.print_vector_store_content(vector_store)
 
     return vector_store
 
 
 def _setup_retriever(vector_store):
-    # TODO NOAH constants
     retriever = vector_store.as_retriever(search_type=constants.SEARCH_TYPE_VALUE,
                                           search_kwargs={constants.K_KEY: 4, constants.SCORE_THRESHOLD_KEY: 0.5})
 

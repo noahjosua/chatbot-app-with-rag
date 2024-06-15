@@ -1,12 +1,8 @@
-import os
-
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain.chains.llm import LLMChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
-from langchain_community.chat_models import ChatHuggingFace
-from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain_core.prompts import ChatPromptTemplate
 
 import constants
@@ -26,7 +22,7 @@ def chat_flow(chat_model, retriever):
 
             template_system_prompt = constants.TEMPLATE_SYSTEM_PROMPT
             qa_chain_prompt = ChatPromptTemplate.from_template(template_system_prompt)
-            llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=True)
+            llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=False)
 
             document_prompt = PromptTemplate(
                 input_variables=[constants.DOCUMENT_PAGE_CONTENT_KEY, constants.DOCUMENT_SOURCE_KEY],
@@ -55,6 +51,6 @@ def chat_flow(chat_model, retriever):
             st.markdown(formatted_answer)
 
         chat_utils.add_messages_to_history(user_prompt, formatted_answer, response)
-        print_to_console.print_chat_history()
+        # print_to_console.print_chat_history()
     else:
         pass
