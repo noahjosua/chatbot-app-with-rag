@@ -40,6 +40,7 @@ def _create_dataframe(name_of_dataset):
 
 
 def _add_column_name_to_row_value(dataframe):
+    dataframe = dataframe.astype(str)
     for index, row in dataframe.iterrows():
         for column in dataframe.columns:
             # Convert the field value to string and concatenate the column name

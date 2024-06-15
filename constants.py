@@ -24,7 +24,7 @@ DOCUMENT_ID_KEY = 'id'
 DOCUMENT_QUESTION_KEY = 'question'
 DOCUMENT_QUESTION_ANSWER_KEY = 'answer'
 
-CONTEXTUALIZED_SYSTEM_PROMPT = """
+REPHRASED_SYSTEM_PROMPT = """
 Please rephrase the following question to make it more concise and understandable. 
 Ensure that the key information and intent of the original question are preserved.
 

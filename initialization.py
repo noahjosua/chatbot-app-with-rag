@@ -2,13 +2,12 @@ import os
 from dotenv import load_dotenv
 
 from huggingface_hub import login
-from langchain_community.chat_models import ChatHuggingFace
-from langchain_community.embeddings import SentenceTransformerEmbeddings
-from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
+from langchain_huggingface.chat_models import ChatHuggingFace
+from langchain_huggingface.llms import HuggingFaceEndpoint
+from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 import constants
-from helper import print_to_console
 import document_preparation
 
 
@@ -23,8 +22,7 @@ def initial_setup():
 def _setup_vector_store():
     modified_chunks = document_preparation.setup_documents()
 
-    embeddings = SentenceTransformerEmbeddings(model_name=constants.EMBEDDINGS_MODEL_NAME)
-
+    embeddings = HuggingFaceEmbeddings(model_name=constants.EMBEDDINGS_MODEL_NAME)
     vector_store = FAISS.from_documents(modified_chunks, embeddings)
     # print_to_console.print_vector_store_content(vector_store)
 
