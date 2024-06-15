@@ -41,13 +41,13 @@
     # implementieren
         https://python.langchain.com/v0.1/docs/modules/data_connection/vectorstores/
         --> doch FAISS, weil man für Chroma Microsoft C++ Build Tools installieren muss (dependency chroma-hnswlib)
-    # TODO einstellen: https://python.langchain.com/v0.1/docs/integrations/vectorstores/faiss/
+    # https://python.langchain.com/v0.1/docs/integrations/vectorstores/faiss/
 
 # Vector store als retriever
       https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/
       https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/
-    # TODO einstellen: https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/#maximum-marginal-relevance-retrieval
-    # TODO evaluation
+    # https://python.langchain.com/v0.1/docs/modules/data_connection/retrievers/vectorstore/#maximum-marginal-relevance-retrieval
+
 
 # Welches LLM? --> https://huggingface.co/chat/models
     https://huggingface.co/CohereForAI/c4ai-command-r-plus --> braucht pro subscription
