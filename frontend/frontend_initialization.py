@@ -4,11 +4,11 @@ import constants
 
 
 def initialize_frontend():
-    # Initialize chat history
+
     if constants.MESSAGES_KEY not in st.session_state:
         st.session_state.messages = []
     if constants.CHAT_HISTORY_KEY not in st.session_state:
-        st.session_state.chat_flow = []
+        st.session_state.chathistory = []
 
     st.header(constants.CHAT_HEADER)
     with st.chat_message(constants.ROLE_ASSISTANT):

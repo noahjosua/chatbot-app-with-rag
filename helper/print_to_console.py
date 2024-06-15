@@ -54,13 +54,13 @@ def print_vector_store_content(vector_store):
 
 
 def print_chat_history():
-    print('Chat history - Chat flow...\n')
-    for message in st.session_state.chat_flow:
+    print('Chat history - Chat history...\n')
+    for message in st.session_state.chathistory:
         print(message)
     print('\n')
 
     print('Chat history - Messages...\n')
-    for message in st.session_state.chat_flow:
+    for message in st.session_state.messages:
         print(message)
     print('\n')
 

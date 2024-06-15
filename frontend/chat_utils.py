@@ -25,6 +25,11 @@ def extract_and_format_sources(response):
     return response
 
 
+def get_chat_history():
+    return '\n'.join([f'{msg[constants.ROLE]}: {msg[constants.MESSAGE_CONTENT_KEY]}' for msg in
+                      st.session_state.chathistory])
+
+
 def format_answer_for_ui(response):
     formatted_answer = ''
     if len(response[constants.RESPONSE_SOURCES_KEY]) > 0:
@@ -32,16 +37,16 @@ def format_answer_for_ui(response):
         for source in response[constants.RESPONSE_SOURCES_KEY]:
             formatted_answer += f"- {source}\n\n"
     else:
-        formatted_answer += f'{response[constants.RESPONSE_SOURCES_KEY]}{constants.FORMATTED_ANSWER_WITHOUT_CONTEXT}'
+        formatted_answer += f'{response[constants.RESPONSE_ANSWER_KEY]}{constants.FORMATTED_ANSWER_WITHOUT_CONTEXT}'
     return formatted_answer
 
 
 def add_messages_to_history(user_prompt, formatted_answer, response):
+    st.session_state.chathistory.append(
+        {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
+    st.session_state.chathistory.append({constants.ROLE: constants.ROLE_ASSISTANT,
+                                         constants.MESSAGE_CONTENT_KEY: response[constants.RESPONSE_ANSWER_KEY]})
     st.session_state.messages.append(
         {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
     st.session_state.messages.append(
         {constants.ROLE: constants.ROLE_ASSISTANT, constants.MESSAGE_CONTENT_KEY: formatted_answer})
-    st.session_state.chat_flow.append(
-        {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
-    st.session_state.chat_flow.append({constants.ROLE: constants.ROLE_ASSISTANT,
-                                       constants.MESSAGE_CONTENT_KEY: response[constants.RESPONSE_ANSWER_KEY]})

@@ -7,8 +7,14 @@ import streamlit as st
 if __name__ == '__main__':
 
     if constants.CHAT_MODEL_IN_SESSION_STATE not in st.session_state:
+        placeholder = st.empty()
+        with placeholder.container():
+            placeholder.write('Hang in there - Everything is being set up for you...')
+
         chat_model_and_retriever = initialization.initial_setup()
         st.session_state.chat_model = chat_model_and_retriever[0]
         st.session_state.retriever = chat_model_and_retriever[1]
+        placeholder.empty()
+
     initialize_frontend()
     chat_flow(st.session_state.chat_model, st.session_state.retriever)

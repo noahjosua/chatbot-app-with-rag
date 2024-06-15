@@ -1,8 +1,12 @@
+import os
+
 import streamlit as st
 from langchain.prompts import PromptTemplate
 from langchain.chains.llm import LLMChain
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.qa_with_sources.retrieval import RetrievalQAWithSourcesChain
+from langchain_community.chat_models import ChatHuggingFace
+from langchain_community.llms.huggingface_endpoint import HuggingFaceEndpoint
 from langchain_core.prompts import ChatPromptTemplate
 
 import constants
@@ -16,10 +20,8 @@ def chat_flow(chat_model, retriever):
             st.markdown(user_prompt)
 
         with ((st.spinner(constants.SPINNER_LABEL))):
-            chat_history_text = '\n'.join(
-                [f'{msg[constants.ROLE]}: {msg[constants.MESSAGE_CONTENT_KEY]}' for msg in st.session_state.chat_flow])
-
-            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model, chat_history_text,
+            chat_history = chat_utils.get_chat_history()
+            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model, chat_history,
                                                                                  user_prompt)
 
             template_system_prompt = constants.TEMPLATE_SYSTEM_PROMPT
@@ -39,14 +41,13 @@ def chat_flow(chat_model, retriever):
             qa = RetrievalQAWithSourcesChain(
                 combine_documents_chain=combine_documents_chain,
                 callbacks=None,
-                verbose=True,
+                verbose=False,
                 retriever=retriever,
                 return_source_documents=True,
             )
 
             response = qa(
-                {constants.QA_USER_PROMPT_KEY: rephrased_user_prompt, constants.CHAT_HISTORY_KEY: chat_history_text})
-
+                {constants.QA_USER_PROMPT_KEY: rephrased_user_prompt, constants.CHAT_HISTORY_KEY: chat_history})
             updated_response = chat_utils.extract_and_format_sources(response)
             formatted_answer = chat_utils.format_answer_for_ui(updated_response)
 

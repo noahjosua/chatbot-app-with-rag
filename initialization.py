@@ -33,8 +33,8 @@ def _setup_vector_store():
 
 def _setup_retriever(vector_store):
     # TODO NOAH constants
-    retriever = vector_store.as_retriever(search_type='similarity_score_threshold',
-                                          search_kwargs={constants.K_KEY: 4, 'score_threshold': 0.5})
+    retriever = vector_store.as_retriever(search_type=constants.SEARCH_TYPE_VALUE,
+                                          search_kwargs={constants.K_KEY: 4, constants.SCORE_THRESHOLD_KEY: 0.5})
 
     return retriever
 

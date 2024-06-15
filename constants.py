@@ -2,13 +2,13 @@
 CHAT_MODEL_IN_SESSION_STATE = 'chat_model'
 
 ### FRONTEND ###
-CHAT_HEADER = 'My Chatbot'
+CHAT_HEADER = 'Ask me anything about Taylor Swift!'
 CHAT_GREETING = 'Hello 👋'
 CHAT_INPUT = 'Type your question'
 SPINNER_LABEL = 'Thinking...'
 
 MESSAGES_KEY = 'messages'
-CHAT_HISTORY_KEY = 'chat_history'
+CHAT_HISTORY_KEY = 'chathistory'
 MESSAGE_CONTENT_KEY = 'content'
 
 ROLE = 'role'
@@ -25,47 +25,30 @@ DOCUMENT_QUESTION_KEY = 'question'
 DOCUMENT_QUESTION_ANSWER_KEY = 'answer'
 
 CONTEXTUALIZED_SYSTEM_PROMPT = """
-You will receive a question and a chat history.
-Your task is to rephrase the question in a way that makes it comprehensible without needing the chat history context, 
-if the original question references the chat history.
-If the question does not reference the chat history, you should return the original question unchanged.
-Do not attempt to answer the question. Only rephrase it if necessary based on the criteria above.
+Please rephrase the following question to make it more concise and understandable. 
+Ensure that the key information and intent of the original question are preserved.
 
-Here is the chat history: {chat_history}
-Here is the original question: {user_prompt}
+Here is the question:\n {user_prompt}
 
-Please provide the rephrased question or the original question if no rephrasing is needed.\n
+Rephrased Question: \n
 """
-
-'''
-CONTEXTUALIZED_SYSTEM_PROMPT = """
-You will receive a question and a chat history.
-Your task is to rephrase the question only if it relies on information from the chat history to be understood. 
-If the question does not depend on the chat history, return the original question unchanged.
-Do not attempt to answer the question. Only rephrase it if necessary based on the criteria above.
-Provide only one rephrased version if rephrasing is needed.
-
-Here is the chat history: {chat_history}
-Here is the original question: {user_prompt}
-
-Please provide the rephrased question or the original question if no rephrasing is needed.
-"""
-'''
 
 TEMPLATE_SYSTEM_PROMPT = """
 User: {question}
-Assistant: Use the following pieces of retrieved context as well as the chat history to answer the question (which might reference context in the chat history).
+Assistant: To answer the question, you should follow these steps:
 
-To answer the question, you should:
-1. Review the provided context carefully to see if it contains relevant information to answer the question.
-2. Also review the chat history to understand the context of the conversation and any relevant information provided in previous exchanges.
-3. If the context and chat history contain enough information to answer the question, provide a clear and concise answer based on that information.
-4. If the context and chat history do not contain enough information to answer the question, respond with "I don't know the answer to that question based on the provided information."
-5. Do not make up answers or provide speculative information if the context and chat history do not contain relevant information to answer the question.\n
+1. Check if the provided context and chat history are non-empty.
+2. Important: If context and chat history are both empty, respond with "I don't know the answer to that question based on the provided information."
+3. If context or chat history (or both) are non-empty:
+    a. Review the provided context carefully to see if it contains relevant information to answer the question.
+    b. Also review the chat history to understand the context of the conversation and any relevant information provided in previous exchanges.
+    c. If the context and chat history contain enough information to answer the question, provide a clear and concise answer based on that information.
+    d. If the context and chat history do not contain enough information to answer the question, respond with "I don't know the answer to that question based on the provided information."
+4. Do not make up answers or provide speculative information if the context and chat history do not contain relevant information to answer the question.\n
 
-Here is the context: {context}
+Here is the context:\n {context}
 
-Here is the chat history: {chat_history}
+Here is the chat history:\n {chathistory}
 """
 
 DOCUMENT_PROMPT_TEMPLATE = '{page_content}\n{source}\n'
@@ -80,18 +63,15 @@ FORMATTED_ANSWER_WITH_CONTEXT = '\n\n**Used context to answer your question:**\n
 FORMATTED_ANSWER_WITHOUT_CONTEXT = '\n\nThere are no documents that could be used to answer your question.'
 
 ### PREPROCESS DATASET ###
-DATASET_EVAL = 'datasets/lamini_taylor_swift_test.csv'
-DATASET = 'datasets/lamini_taylor_swift_train.csv'
+DATASET_EVAL = 'datasets/taylor_swift_test.csv'
+DATASET = 'datasets/taylor_swift.csv'
 REPLACEMENT_NAN_VALUES = 'unknown'
 
 ### INITIAL SETUP ###
 HUGGING_FACE_API_KEY = 'HUGGING_FACE_API_KEY'
 EMBEDDINGS_MODEL_NAME = 'all-MiniLM-L6-v2'
-SEARCH_TYPE = 'similarity'
+SEARCH_TYPE_VALUE = 'similarity_score_threshold'
+SCORE_THRESHOLD_KEY = 'score_threshold'
 K_KEY = 'k'
 LLM_MODEL_NAME = 'mistralai/Mistral-7B-Instruct-v0.2'
 LLM_TASK = 'text-generation'
-
-### Evaluation ###
-LLM_MODEL_NAME_EVAL = 'google/flan-t5-base'
-LLM_TASK_EVAL = 'text2text-generation'

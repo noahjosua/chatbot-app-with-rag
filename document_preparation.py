@@ -7,7 +7,6 @@ import constants
 from helper import print_to_console
 
 
-# TODO NOAH Daten noch mehr bereinigen?
 def setup_documents():
     dataframe = _create_dataframe(constants.DATASET_EVAL)
 
