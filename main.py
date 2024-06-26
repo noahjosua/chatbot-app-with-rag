@@ -1,5 +1,6 @@
 import constants
 import initialization
+from evaluation import evaluation
 from frontend.chat_flow import chat_flow
 from frontend.frontend_initialization import initialize_frontend
 import streamlit as st
@@ -14,6 +15,7 @@ if __name__ == '__main__':
         chat_model_and_retriever = initialization.initial_setup()
         st.session_state.chat_model = chat_model_and_retriever[0]
         st.session_state.retriever = chat_model_and_retriever[1]
+        evaluation(st.session_state.chat_model, st.session_state.retriever)
         placeholder.empty()
 
     initialize_frontend()

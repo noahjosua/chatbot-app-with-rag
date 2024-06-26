@@ -9,7 +9,6 @@ from helper import print_to_console
 
 def setup_documents():
     dataframe = _create_dataframe(constants.DATASET_EVAL)
-
     loader = DataFrameLoader(dataframe, page_content_column=constants.DOCUMENT_PAGE_CONTENT_KEY)
     documents = loader.load()
     modified_documents = _strip_unnecessary_prefixes_from_metadata(documents)

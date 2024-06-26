@@ -7,7 +7,6 @@ from langchain_core.prompts import ChatPromptTemplate
 
 import constants
 from frontend import chat_utils
-from helper import print_to_console
 
 
 def chat_flow(chat_model, retriever):
@@ -17,11 +16,11 @@ def chat_flow(chat_model, retriever):
 
         with ((st.spinner(constants.SPINNER_LABEL))):
             chat_history = chat_utils.get_chat_history()
-            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model,user_prompt)
+            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model, user_prompt)
 
             template_system_prompt = constants.TEMPLATE_SYSTEM_PROMPT
             qa_chain_prompt = ChatPromptTemplate.from_template(template_system_prompt)
-            llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=False)
+            llm_chain = LLMChain(llm=chat_model, prompt=qa_chain_prompt, callbacks=None, verbose=True)
 
             document_prompt = PromptTemplate(
                 input_variables=[constants.DOCUMENT_PAGE_CONTENT_KEY, constants.DOCUMENT_SOURCE_KEY],
@@ -36,7 +35,7 @@ def chat_flow(chat_model, retriever):
             qa = RetrievalQAWithSourcesChain(
                 combine_documents_chain=combine_documents_chain,
                 callbacks=None,
-                verbose=False,
+                verbose=True,
                 retriever=retriever,
                 return_source_documents=True,
             )
