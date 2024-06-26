@@ -16,24 +16,24 @@ def evaluation(chat_model, retriever):
     questions = collect_questions(dataframe)
     answers = collect_answers(dataframe)
 
-    question = questions[9][1] # TODO rows löschen, wo null werte oder komische zeichenketten und nichts sinnvolles drin sind
+    question = questions[9][1]
     expected_answer = answers[9][1]
     print(question)
     print(expected_answer)
 
     actual_answer_and_context_answer = flow(chat_model, retriever, question)
     actual_answer = actual_answer_and_context_answer[0]
-    context_answer = actual_answer_and_context_answer[1]
+    context_answers = actual_answer_and_context_answer[1]
     print(actual_answer)
-    print(context_answer)
+    print(context_answers)
 
-    '''
+    context_answers_as_string = ",".join(context_answers)
     test_case = LLMTestCase(
         input=question,
         actual_output=actual_answer,
         expected_output=expected_answer,
         retrieval_context=[
-            context_answer
+            context_answers_as_string
         ]
     )
 
@@ -53,13 +53,16 @@ def evaluation(chat_model, retriever):
     contextual_relevancy_metric.measure(test_case)
     print("Score: ", contextual_relevancy_metric.score)
     print("Reason: ", contextual_relevancy_metric.reason)
-    '''
 
 
 def prepare_dataframe():
     dataframe = pd.read_csv(constants.DATASET_EVAL)
-    dataframe.fillna(constants.REPLACEMENT_NAN_VALUES, inplace=True)
-    return dataframe
+    substring = "having trouble understanding"
+    mask = dataframe['answer'].str.contains(substring)
+    filtered_dataframe = dataframe[~mask]
+    # for index, row in filtered_dataframe.iterrows():
+    #   print(row)
+    return filtered_dataframe
 
 
 def collect_questions(dataframe):
@@ -121,8 +124,7 @@ def flow(chat_model, retriever, question):
     print(response)
     actual_answer = response['answer']
     source_documents = response['source_documents']
-    context_answer = ''
+    context_answers = []
     for document in source_documents:
-        context_answer = document.metadata['source']['answer']
-        # TODO was tun, wenn es mehrere documente gibt? oder wenn es keine gibt?
-    return [actual_answer, context_answer]
+        context_answers.append(document.metadata['source']['answer'])
+    return [actual_answer, context_answers]
