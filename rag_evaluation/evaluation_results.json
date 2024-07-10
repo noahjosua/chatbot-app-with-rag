@@ -1,0 +1,135 @@
+[
+    {
+        "question_id": 0,
+        "question": "Has Taylor Swift written songs for other artists?",
+        "expected_answer": "Yes, Taylor Swift has written songs for other artists. Some notable examples include This Is What You Came For by Calvin Harris featuring Rihanna, Better Man by Little Big Town, and You'll Always Find Your Way Back Home by Miley Cyrus.",
+        "actual_answer": " Based on the provided context, yes, Taylor Swift has written songs for other musicians. The context lists some examples including \"This Is What You Came For\" by Calvin Harris featuring Rihanna, \"Better Man\" by Little Big Town, and \"You'll Always Find Your Way Back Home\" by Miley Cyrus.",
+        "context": "Yes, Taylor Swift has written songs for other artists. Some notable examples include This Is What You Came For by Calvin Harris featuring Rihanna, Better Man by Little Big Town, and You'll Always Find Your Way Back Home by Miley Cyrus."
+    },
+    {
+        "question_id": 1,
+        "question": "What is Taylor Swift's latest music video?",
+        "expected_answer": "Taylor Swift's latest music video is \"Bejeweled\".",
+        "actual_answer": " Based on the provided context, the most recent music video released by Taylor Swift is \"Bejeweled\".",
+        "context": "Taylor Swift's latest music video is \"Bejeweled\"."
+    },
+    {
+        "question_id": 2,
+        "question": "what's her IG",
+        "expected_answer": "Taylor Swift's official Instagram account was @taylorswift.",
+        "actual_answer": " Based on the provided context, there is no information about a specific Instagram handle for anyone mentioned or present in the context. Therefore, I cannot provide the answer to the question based on the provided information. I'm here to help answer factual questions to the best of my ability, and in this case, I don't have enough information to provide a clear and concise answer. If you have any other factual questions, feel free to ask!",
+        "context": ""
+    },
+    {
+        "question_id": 3,
+        "question": "What is the controversy surrounding Taylor Swift's avid fan base and their love for her merchandise at her concerts?",
+        "expected_answer": "Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior.",
+        "actual_answer": " Based on the context provided, Taylor Swift's fan base is criticized for their enthusiasm towards her merchandise at concerts due to several reasons. These include the merchandise being sold out rapidly, leaving many fans disappointed; some fans buying multiple items to resell them at a higher price, creating a black market for Taylor Swift merchandise; and fans exhibiting unsavory behavior leading to some being banned from attending her concerts.",
+        "context": "Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior."
+    },
+    {
+        "question_id": 4,
+        "question": "What awards has Taylor Swift won?",
+        "expected_answer": "Taylor Swift has won Artist of the Year by the Nashville Songwriters Association (2010 and 2011), Woman of the Year by Billboard (2011), Entertainer of the Year by the Academy of Country Music (2011 and 2012) and the Country Music Association in 2011, and Artist of the Year and Favorite Country Album at the American Music Awards of 2011.",
+        "actual_answer": " Based on the provided context, Taylor Swift has won multiple awards throughout her career. She has received Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, two Brit Awards, and has been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association. She was also the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of",
+        "context": "Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient. Taylor Swift has won Artist of the Year by the Nashville Songwriters Association (2010 and 2011), Woman of the Year by Billboard (2011), Entertainer of the Year by the Academy of Country Music (2011 and 2012) and the Country Music Association in 2011, and Artist of the Year and Favorite Country Album at the American Music Awards of 2011."
+    },
+    {
+        "question_id": 5,
+        "question": "Can you taste food without a sense of smell?",
+        "expected_answer": "Let\u2019s keep the discussion relevant to Taylor Swift.",
+        "actual_answer": " Based on the given context, the ability to taste food does depend on the sense of smell. Our taste buds can detect the basic tastes like sweet, sour, salty, bitter, and umami. However, our experience of the full taste of food is largely influenced by our sense of smell. The smell receptors in our nose mix with the taste sensations from our tongue to create the complex flavors that we perceive. This combination of taste and smell is known as gust",
+        "context": ""
+    },
+    {
+        "question_id": 6,
+        "question": "What is the reputation of Taylor Swift's latest album among her avid fans?",
+        "expected_answer": "Taylor Swift's latest album, Reputation, has received mixed reviews from her avid fans. While some fans have praised the album for its catchy songs and bold lyrics, others have criticized it for its lack of depth and repetitive themes. Overall, the album has been met with a mixed response from Swift's fans, with some loving it and others feeling disappointed.",
+        "actual_answer": " Based on the provided context, Taylor Swift's latest album, Reputation, has received mixed reviews from her avid fans. Some fans have praised the album for its catchy songs and bold lyrics, while others have criticized it for its lack of depth and repetitive themes. The response from her fans has been a mix of love and disappointment overall. Therefore, the reputation of Taylor Swift's latest album among her avid fans is considered mixed.",
+        "context": "Taylor Swift's latest album, Reputation, has received mixed reviews from her avid fans. While some fans have praised the album for its catchy songs and bold lyrics, others have criticized it for its lack of depth and repetitive themes. Overall, the album has been met with a mixed response from Swift's fans, with some loving it and others feeling disappointed. Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior."
+    },
+    {
+        "question_id": 7,
+        "question": "What is the most popular song of Taylor Swift? How does she come up with her song ideas? What is her favorite color?",
+        "expected_answer": "Taylor Swift's most popular song is \"Shake It Off.\" She comes up with her song ideas from personal experiences and emotions. Her favorite color is pink.",
+        "actual_answer": " Based on the provided context, the biggest hit song of Taylor Swift is \"Shake It Off,\" and she is inspired by personal experiences and emotions to write music. Her favorite color is pink.",
+        "context": "Taylor Swift's most popular song is \"Shake It Off.\" She comes up with her song ideas from personal experiences and emotions. Her favorite color is pink."
+    },
+    {
+        "question_id": 8,
+        "question": "How tall is Taylor Swift?",
+        "expected_answer": "Taylor Swift is approximately 5 feet 10 inches (178 cm) tall.",
+        "actual_answer": " Based on the provided context, Taylor Swift is approximately 5 feet 10 inches (178 cm) tall.",
+        "context": "Taylor Swift is approximately 5 feet 10 inches (178 cm) tall."
+    },
+    {
+        "question_id": 10,
+        "question": "What is the opinion of Sasha Frere-Jones of The New Yorker about Taylor Swift's performance?",
+        "expected_answer": "Sasha Frere-Jones of The New Yorker called Taylor Swift a \"preternaturally skilled\" performer with a vibrant stage presence.",
+        "actual_answer": " Based on the provided context, Sasha Frere-Jones of The New Yorker has expressed that Taylor Swift is a \"preternaturally skilled\" performer with a vibrant stage presence.",
+        "context": "Sasha Frere-Jones of The New Yorker called Taylor Swift a \"preternaturally skilled\" performer with a vibrant stage presence."
+    },
+    {
+        "question_id": 11,
+        "question": "What is the reason behind Taylor Swift's loyal followers?",
+        "expected_answer": "Taylor Swift's loyal followers are a result of her relatable and authentic personality. She has always been open about her personal life and struggles, which has made her fans feel connected to her. Additionally, her music is often about love and heartbreak, which resonates with many people. Her fans also appreciate her strong work ethic and her dedication to her craft. Overall, Taylor Swift's loyal followers admire her for her talent, her personality, and her relatability.",
+        "actual_answer": " Based on the provided context, Taylor Swift's loyal followers are a result of her relatable and authentic personality, as well as her music that resonates with many people about love and heartbreak. Her fans also appreciate her strong work ethic and dedication to her craft. There is no information in the context about why the fans' loyalty is shown in a particularly strong way, so that part of the question cannot be directly answered based on the context alone.\n\nHowever, there is",
+        "context": "Taylor Swift's loyal followers are a result of her relatable and authentic personality. She has always been open about her personal life and struggles, which has made her fans feel connected to her. Additionally, her music is often about love and heartbreak, which resonates with many people. Her fans also appreciate her strong work ethic and her dedication to her craft. Overall, Taylor Swift's loyal followers admire her for her talent, her personality, and her relatability. Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior."
+    },
+    {
+        "question_id": 12,
+        "question": "What is the significance of the album Speak Now in Taylor Swift's career as a millennial fan?",
+        "expected_answer": "Speak Now is a significant album in Taylor Swift's career as it marked a transition in her music style from country to pop. The album was released in 2010 and was a commercial success, selling over 1 million copies in the United States alone. The album also received critical acclaim, with many reviewers praising the album's lyrical depth and maturity. Speak Now also marked a turning point in Taylor Swift's personal life, as she wrote many of the songs on the album about her breakup with Taylor Lautner. The album's success and critical acclaim helped cement Taylor Swift's status as a pop star and paved the way for her future success.",
+        "actual_answer": " Based on the provided context, \"Speak Now\" is a significant album in Taylor Swift's career as a millennial artist due to its commercial success, critical acclaim, and transition from country to pop music style. The release of this album helped cement Taylor Swift's status as a pop star and paved the way for her future success. The lyrical depth and maturity depicted in the album also resonated with her millennial fanbase, making it a turning point",
+        "context": "Speak Now is a significant album in Taylor Swift's career as it marked a transition in her music style from country to pop. The album was released in 2010 and was a commercial success, selling over 1 million copies in the United States alone. The album also received critical acclaim, with many reviewers praising the album's lyrical depth and maturity. Speak Now also marked a turning point in Taylor Swift's personal life, as she wrote many of the songs on the album about her breakup with Taylor Lautner. The album's success and critical acclaim helped cement Taylor Swift's status as a pop star and paved the way for her future success."
+    },
+    {
+        "question_id": 14,
+        "question": "What are the lyrics from Taylor Swift's song \"Superman\"?",
+        "expected_answer": "The lyrics from Swift's song \"Superman\" include \"Tall, dark and beautiful\" and \"He's not all bad like his reputation.\"",
+        "actual_answer": " Based on the provided context, the lyrics from Taylor Swift's song \"Superman\" that are mentioned include: \"He's tall, dark and beautiful\" and \"He's not all bad like his reputation.\" However, it's important to note that these are only two lines from the song, and the full lyrics may include additional lines or verses that are not mentioned in the context. If you are looking for a more comprehensive list of lyrics, I would recommend checking a",
+        "context": "The lyrics from Swift's song \"Superman\" include \"Tall, dark and beautiful\" and \"He's not all bad like his reputation.\""
+    },
+    {
+        "question_id": 15,
+        "question": "What awards has Taylor Swift won?",
+        "expected_answer": "Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient.",
+        "actual_answer": " Based on the provided context, Taylor Swift has won multiple awards throughout her career. She has received Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, two Brit Awards, and has been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association. She was also the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of",
+        "context": "Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient. Taylor Swift has won Artist of the Year by the Nashville Songwriters Association (2010 and 2011), Woman of the Year by Billboard (2011), Entertainer of the Year by the Academy of Country Music (2011 and 2012) and the Country Music Association in 2011, and Artist of the Year and Favorite Country Album at the American Music Awards of 2011."
+    },
+    {
+        "question_id": 16,
+        "question": "What sound does Swift's 2022 album, Midnights, have?",
+        "expected_answer": "Midnights has a more experimental, \"subdued and amorphous pop sound\".",
+        "actual_answer": " Midnights, Swift's 2022 album, has a more experimental, \"subdued and amorphous pop sound.\" (Answer from the provided context)",
+        "context": "Midnights has a more experimental, \"subdued and amorphous pop sound\"."
+    },
+    {
+        "question_id": 17,
+        "question": "What is the musical style of the song \"Dear John\"?",
+        "expected_answer": "The musical style of the song \"Dear John\" is soft guitar, similar to John Mayer's own music.",
+        "actual_answer": " Based on the provided context, the genre or musical style of the song \"Dear John\" is identified as soft guitar, which is similar to the musical style of John Mayer's own music.",
+        "context": "The musical style of the song \"Dear John\" is soft guitar, similar to John Mayer's own music."
+    },
+    {
+        "question_id": 18,
+        "question": "Who are some of Taylor Swift's celebrity boyfriends?",
+        "expected_answer": "Taylor Swift has had several celebrity boyfriends, including Joe Alwyn, Tom Hiddleston, Calvin Harris, Harry Styles, Jake Gyllenhaal, John Mayer, Taylor Lautner, and Joe Jonas.",
+        "actual_answer": " Based on publicly available information, some of Taylor Swift's famous romantic partners include:\n\n1. Joe Jonas (2008-2010)\n2. Taylor Lautner (2009-2010)\n3. Jake Gyllenhaal (2010-2011)\n4. Conor Kennedy (2012)\n5. Harry Styles (2012-20",
+        "context": ""
+    },
+    {
+        "question_id": 19,
+        "question": "What have critics praised about Taylor Swift's performances?",
+        "expected_answer": "Critics have praised Taylor Swift's versatility as an entertainer, her ability to switch onstage personas and performance styles depending on the varying themes and aesthetics of her albums, and her Broadway theatricality in her concert productions.",
+        "actual_answer": " Based on the provided context, critics have praised Taylor Swift's performances for her versatility as an entertainer, her ability to switch onstage personas and performance styles depending on the varying themes and aesthetics of her albums, and her Broadway theatricality in her concert productions.",
+        "context": "Critics have praised Taylor Swift's versatility as an entertainer, her ability to switch onstage personas and performance styles depending on the varying themes and aesthetics of her albums, and her Broadway theatricality in her concert productions."
+    },
+    {
+        "question_id": 20,
+        "question": "What award did Taylor Swift win for the song \"Better Man\"?",
+        "expected_answer": "Taylor Swift won the Song of the Year award at the 51st CMA Awards for the song \"Better Man\".",
+        "actual_answer": " Based on the provided context, Taylor Swift won the Song of the Year award at the 51st Country Music Association Awards for the song \"Better Man\".",
+        "context": "Taylor Swift won the Song of the Year award at the 51st CMA Awards for the song \"Better Man\". Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient."
+    }
+]

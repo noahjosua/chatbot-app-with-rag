@@ -1,6 +1,6 @@
 import streamlit as st
 
-import constants
+from constants import constants
 
 
 def initialize_frontend():

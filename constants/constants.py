@@ -51,6 +51,21 @@ Here is the context:\n {context}
 Here is the chat history:\n {chathistory}
 """
 
+TEMPLATE_SYSTEM_PROMPT_FOR_EVAL = """
+User: {question}
+Assistant: To answer the question, you should follow these steps:
+
+1. Check if the provided context is not empty.
+2. Important: If context is empty, respond with "I don't know the answer to that question based on the provided information."
+3. If context is not empty:
+    a. Review the provided context carefully to see if it contains relevant information to answer the question.
+    b. If the context contains enough information to answer the question, provide a clear and concise answer based on that information.
+    c. If the context does not contain enough information to answer the question, respond with "I don't know the answer to that question based on the provided information."
+4. Do not make up answers or provide speculative information if the context does not contain relevant information to answer the question.\n
+
+Here is the context:\n {context}
+"""
+
 DOCUMENT_PROMPT_TEMPLATE = '{page_content}\n{source}\n'
 DOCUMENT_PROMPT_VARIABLE_NAME = 'context'
 QA_USER_PROMPT_KEY = 'question'
@@ -63,8 +78,9 @@ FORMATTED_ANSWER_WITH_CONTEXT = '\n\n**Used context to answer your question:**\n
 FORMATTED_ANSWER_WITHOUT_CONTEXT = '\n\nThere are no documents that could be used to answer your question.'
 
 ### PREPROCESS DATASET ###
-DATASET_EVAL = 'datasets/taylor_swift_test.csv'
-DATASET = 'datasets/taylor_swift.csv'
+DATASET_EVAL = '../datasets/eval/taylor_swift_eval.csv'
+DATASET_SHORTENED = '../datasets/shortened/taylor_swift_shortened.csv'
+DATASET_ORIGINAL = 'datasets/original/taylor_swift.csv'
 REPLACEMENT_NAN_VALUES = 'unknown'
 
 ### INITIAL SETUP ###
