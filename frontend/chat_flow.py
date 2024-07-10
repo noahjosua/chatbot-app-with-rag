@@ -19,7 +19,16 @@ def chat_flow(chat_model, retriever):
         # Use a spinner to indicate processing
         with ((st.spinner(constants.SPINNER_LABEL))):
             chat_history = chat_utils.get_chat_history()
-            rephrased_user_prompt = chat_utils.rephrase_user_prompt_if_necessary(chat_model, user_prompt)
+
+            contextualize_system_prompt_template = PromptTemplate.from_template(
+                constants.CONTEXTUALIZED_SYSTEM_PROMPT)
+            contextualize_chain = LLMChain(llm=chat_model, prompt=contextualize_system_prompt_template, callbacks=None,
+                                           verbose=True)
+            rephrased_user_prompt = \
+                contextualize_chain.invoke({constants.CHAT_HISTORY_KEY: chat_history,
+                                            constants.USER_PROMPT_KEY: user_prompt})[
+                    constants.TEXT_KEY]
+            # print(rephrased_user_prompt)
 
             # Define prompt template for the QA system
             template_system_prompt = constants.TEMPLATE_SYSTEM_PROMPT
@@ -30,7 +39,8 @@ def chat_flow(chat_model, retriever):
 
             # Define document prompt template
             document_prompt = PromptTemplate(
-                input_variables=[constants.DOCUMENT_PAGE_CONTENT_KEY, constants.DOCUMENT_SOURCE_KEY],
+                input_variables=[constants.DOCUMENT_PAGE_CONTENT_KEY,
+                                 constants.DOCUMENT_SOURCE_KEY],
                 template=constants.DOCUMENT_PROMPT_TEMPLATE,
             )
 
@@ -53,7 +63,8 @@ def chat_flow(chat_model, retriever):
 
             # Execute QA process with user prompt and chat history
             response = qa(
-                {constants.QA_USER_PROMPT_KEY: rephrased_user_prompt, constants.CHAT_HISTORY_KEY: chat_history})
+                {constants.QA_USER_PROMPT_KEY: rephrased_user_prompt,
+                 constants.CHAT_HISTORY_KEY: chat_history})
 
             # Extract and format sources from the response
             updated_response = chat_utils.extract_and_format_sources(response)

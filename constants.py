@@ -24,11 +24,16 @@ DOCUMENT_ID_KEY = 'id'
 DOCUMENT_QUESTION_KEY = 'question'
 DOCUMENT_QUESTION_ANSWER_KEY = 'answer'
 
-REPHRASED_SYSTEM_PROMPT = """
-Please rephrase the following question to make it more concise and understandable. 
-Ensure that the key information and intent of the original question are preserved.
+CONTEXTUALIZED_SYSTEM_PROMPT = """Create a self-contained question from a given user prompt,
+considering possible references to previous chat history.
+If the user's prompt is unrelated to the chat history, leave it unchanged.
+If the user's prompt references the chat history, rephrase the question to make it comprehensible without
+the need for the context provided by the chat history.
+Please refrain from answering the question; simply adjust its wording if necessary, otherwise leave it unchanged.
 
-Here is the question:\n {user_prompt}
+Here is the user prompt:\n {user_prompt}
+
+Here is the chat history:\n {chathistory}
 
 Rephrased Question: \n
 """

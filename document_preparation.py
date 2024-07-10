@@ -4,7 +4,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pandas as pd
 
 import constants
-from helper import print_to_console
 
 
 def setup_documents():

@@ -6,18 +6,6 @@ import streamlit as st
 import constants
 
 
-def rephrase_user_prompt_if_necessary(chat_model, user_prompt):
-    contextualize_system_prompt = constants.REPHRASED_SYSTEM_PROMPT
-    contextualize_system_prompt_template = PromptTemplate.from_template(contextualize_system_prompt)
-
-    # Initialize LLMChain with chat model and prompt template
-    contextualize_chain = LLMChain(llm=chat_model, prompt=contextualize_system_prompt_template, callbacks=None,
-                                   verbose=True)
-
-    # Invoke chain with user prompt and return the rephrased text
-    return contextualize_chain.invoke({constants.USER_PROMPT_KEY: user_prompt})[constants.TEXT_KEY]
-
-
 def extract_and_format_sources(response):
     # Extract document metadata and format sources
     sources = [
