@@ -8,7 +8,7 @@ from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
 from constants import constants
-import document_preparation
+from init import document_preparation
 
 
 def initial_setup(dataset):

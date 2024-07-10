@@ -1,5 +1,5 @@
 from constants import constants
-import initialization
+from init import initialization
 from frontend.chat_flow import chat_flow
 from frontend.frontend_initialization import initialize_frontend
 import streamlit as st

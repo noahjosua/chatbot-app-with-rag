@@ -1,9 +1,6 @@
 from dotenv import load_dotenv
 
-import initialization
-from constants import constants
 from rag_evaluation.dataset_for_confident_ai_generation import create_and_push_dataset_to_confident_ai
-from rag_evaluation.json_dataset_generation import generate_json_for_eval
 from rag_evaluation.tests import run_tests
 
 if __name__ == '__main__':
