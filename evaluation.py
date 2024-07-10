@@ -1,6 +1,10 @@
 import os
 import pandas as pd
-from deepeval.metrics import ContextualPrecisionMetric, ContextualRecallMetric, ContextualRelevancyMetric
+from deepeval.metrics import ContextualPrecisionMetric, ContextualRecallMetric, ContextualRelevancyMetric, \
+    AnswerRelevancyMetric, FaithfulnessMetric
+from deepeval.metrics.ragas import RAGASAnswerRelevancyMetric, RAGASFaithfulnessMetric, RAGASContextualRecallMetric, \
+    RAGASContextualPrecisionMetric
+from deepeval.metrics.ragas import RagasMetric
 from deepeval.test_case import LLMTestCase
 from langchain.chains.combine_documents.stuff import StuffDocumentsChain
 from langchain.chains.llm import LLMChain
@@ -41,7 +45,14 @@ def evaluation(chat_model, retriever):
     contextual_precision_metric = ContextualPrecisionMetric()
     contextual_recall_metric = ContextualRecallMetric()
     contextual_relevancy_metric = ContextualRelevancyMetric()
-
+    answer_relevancy_metric = AnswerRelevancyMetric()
+    ragas_avg_metric = RagasMetric()
+    ragas_answer_relevancy_metric = RAGASAnswerRelevancyMetric()
+    ragas_faithfulness_metric = RAGASFaithfulnessMetric()
+    ragas_contextual_recall_metric = RAGASContextualRecallMetric()
+    ragas_contextual_precision_metric = RAGASContextualPrecisionMetric()
+    faithfulness_metric = FaithfulnessMetric()
+    
     contextual_precision_metric.measure(test_case)
     print("Score: ", contextual_precision_metric.score)
     print("Reason: ", contextual_precision_metric.reason)
@@ -53,6 +64,10 @@ def evaluation(chat_model, retriever):
     contextual_relevancy_metric.measure(test_case)
     print("Score: ", contextual_relevancy_metric.score)
     print("Reason: ", contextual_relevancy_metric.reason)
+
+    answer_relevancy_metric.measure(test_case)
+    print("Score: ", answer_relevancy_metric.score)
+    print("Reason: ", answer_relevancy_metric.reason)
 
 
 def prepare_dataframe():

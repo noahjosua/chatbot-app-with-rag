@@ -15,7 +15,7 @@ if __name__ == '__main__':
         chat_model_and_retriever = initialization.initial_setup()
         st.session_state.chat_model = chat_model_and_retriever[0]
         st.session_state.retriever = chat_model_and_retriever[1]
-        evaluation(st.session_state.chat_model, st.session_state.retriever)
+        # evaluation(st.session_state.chat_model, st.session_state.retriever)
         placeholder.empty()
 
     initialize_frontend()

@@ -33,7 +33,7 @@ def _create_dataframe(name_of_dataset):
     # Combine all columns into a single column, removing extra spaces
     dataframe[constants.DOCUMENT_PAGE_CONTENT_KEY] = dataframe.apply(lambda r: '; '.join(r.astype(str).str.strip()),
                                                                      axis=1)
-    pd.set_option('display.max_colwidth', None)
+    pd.set_option('display.max_colwidth', None)  # Set option to display full column width
     # print_to_console.print_dataframe(dataframe)
     return dataframe
 
@@ -49,6 +49,8 @@ def _add_column_name_to_row_value(dataframe):
 
 def _strip_unnecessary_prefixes_from_metadata(loaded_documents):
     for document in loaded_documents:
+
+        # Process metadata by splitting keys and values and updating document metadata
         processed_metadata = {key.split(': ')[0]: value.split(': ')[1] for key, value in document.metadata.items()}
         document.metadata = processed_metadata
     # print_to_console.print_documents_with_modified_metadata(loaded_documents)
