@@ -1,3 +1,25 @@
+### DATASET ###
+DATASET_ORIGINAL = 'datasets/original/taylor_swift.csv'
+DATASET_EVAL = '../datasets/eval/taylor_swift_eval.csv'
+
+### HUGGING FACE ###
+HUGGING_FACE_API_KEY = 'HUGGING_FACE_API_KEY'
+
+### CONFIDENT AI ###
+CONFIDENT_API_KEY = 'CONFIDENT_API_KEY'
+
+### LLM ###
+LLM_MODEL_NAME = 'mistralai/Mistral-7B-Instruct-v0.2'
+LLM_TASK = 'text-generation'
+
+### EMBEDDINGS MODEL ###
+EMBEDDINGS_MODEL_NAME = 'all-MiniLM-L6-v2'
+
+### RETRIEVER ###
+SEARCH_TYPE_VALUE = 'similarity_score_threshold'
+SCORE_THRESHOLD_KEY = 'score_threshold'
+K_KEY = 'k'
+
 ### MAIN ###
 CHAT_MODEL_IN_SESSION_STATE = 'chat_model'
 
@@ -7,6 +29,7 @@ CHAT_GREETING = 'Hello 👋'
 CHAT_INPUT = 'Type your question'
 SPINNER_LABEL = 'Thinking...'
 
+### SESSION STATE ###
 MESSAGES_KEY = 'messages'
 CHAT_HISTORY_KEY = 'chathistory'
 MESSAGE_CONTENT_KEY = 'content'
@@ -15,15 +38,13 @@ ROLE = 'role'
 ROLE_ASSISTANT = 'assistant'
 ROLE_USER = 'user'
 
-USER_PROMPT_KEY = 'user_prompt'
-TEXT_KEY = 'text'
-
-DOCUMENT_PAGE_CONTENT_KEY = 'page_content'
-DOCUMENT_SOURCE_KEY = 'source'
+### DOCUMENT ###
 DOCUMENT_ID_KEY = 'id'
-DOCUMENT_QUESTION_KEY = 'question'
-DOCUMENT_QUESTION_ANSWER_KEY = 'answer'
+DOCUMENT_SOURCE_KEY = 'source'
+DOCUMENT_PAGE_CONTENT_KEY = 'page_content'
+UNUSABLE_ROW_KEY = 'having trouble understanding'
 
+### REPHRASE USER PROMPT ###
 REPHRASED_SYSTEM_PROMPT = """
 Please rephrase the following question to make it more concise and understandable. 
 Ensure that the key information and intent of the original question are preserved.
@@ -33,6 +54,10 @@ Here is the question:\n {user_prompt}
 Rephrased Question: \n
 """
 
+USER_PROMPT_KEY = 'user_prompt'
+TEXT_KEY = 'text'
+
+### CHAT FLOW ###
 TEMPLATE_SYSTEM_PROMPT = """
 User: {question}
 Assistant: To answer the question, you should follow these steps:
@@ -51,6 +76,18 @@ Here is the context:\n {context}
 Here is the chat history:\n {chathistory}
 """
 
+QUESTION_KEY = 'question'
+CONTEXT_KEY = 'context'
+DOCUMENT_PROMPT_TEMPLATE = '{page_content}\n{source}\n'
+
+ANSWER_KEY = 'answer'
+RESPONSE_SOURCE_DOC_KEY = 'source_documents'
+RESPONSE_SOURCES_KEY = 'sources'
+
+FORMATTED_ANSWER_WITH_CONTEXT = '\n\n**Used context to answer your question:**\n\n'
+FORMATTED_ANSWER_WITHOUT_CONTEXT = '\n\nThere are no documents that could be used to answer your question.'
+
+### EVALUATION ###
 TEMPLATE_SYSTEM_PROMPT_FOR_EVAL = """
 User: {question}
 Assistant: To answer the question, you should follow these steps:
@@ -66,28 +103,10 @@ Assistant: To answer the question, you should follow these steps:
 Here is the context:\n {context}
 """
 
-DOCUMENT_PROMPT_TEMPLATE = '{page_content}\n{source}\n'
-DOCUMENT_PROMPT_VARIABLE_NAME = 'context'
-QA_USER_PROMPT_KEY = 'question'
+EVALUATION_RESULTS = 'evaluation_results.json'
+EVALUATION_RESULTS_PATH = '../rag_evaluation/evaluation_results.json'
+DATASET_ALIAS = 'Evaluation Dataset - Taylor Swift'
 
-RESPONSE_ANSWER_KEY = 'answer'
-RESPONSE_SOURCE_DOC_KEY = 'source_documents'
-RESPONSE_SOURCES_KEY = 'sources'
-
-FORMATTED_ANSWER_WITH_CONTEXT = '\n\n**Used context to answer your question:**\n\n'
-FORMATTED_ANSWER_WITHOUT_CONTEXT = '\n\nThere are no documents that could be used to answer your question.'
-
-### PREPROCESS DATASET ###
-DATASET_EVAL = '../datasets/eval/taylor_swift_eval.csv'
-DATASET_SHORTENED = '../datasets/shortened/taylor_swift_shortened.csv'
-DATASET_ORIGINAL = 'datasets/original/taylor_swift.csv'
-REPLACEMENT_NAN_VALUES = 'unknown'
-
-### INITIAL SETUP ###
-HUGGING_FACE_API_KEY = 'HUGGING_FACE_API_KEY'
-EMBEDDINGS_MODEL_NAME = 'all-MiniLM-L6-v2'
-SEARCH_TYPE_VALUE = 'similarity_score_threshold'
-SCORE_THRESHOLD_KEY = 'score_threshold'
-K_KEY = 'k'
-LLM_MODEL_NAME = 'mistralai/Mistral-7B-Instruct-v0.2'
-LLM_TASK = 'text-generation'
+QUESTION_ID_KEY = 'question_id'
+ACTUAL_ANSWER_KEY = 'actual_answer'
+EXPECTED_ANSWER_KEY = 'expected_answer'

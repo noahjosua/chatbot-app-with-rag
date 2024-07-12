@@ -1,135 +1,240 @@
 [
     {
         "question_id": 0,
-        "question": "Has Taylor Swift written songs for other artists?",
-        "expected_answer": "Yes, Taylor Swift has written songs for other artists. Some notable examples include This Is What You Came For by Calvin Harris featuring Rihanna, Better Man by Little Big Town, and You'll Always Find Your Way Back Home by Miley Cyrus.",
-        "actual_answer": " Based on the provided context, yes, Taylor Swift has written songs for other musicians. The context lists some examples including \"This Is What You Came For\" by Calvin Harris featuring Rihanna, \"Better Man\" by Little Big Town, and \"You'll Always Find Your Way Back Home\" by Miley Cyrus.",
-        "context": "Yes, Taylor Swift has written songs for other artists. Some notable examples include This Is What You Came For by Calvin Harris featuring Rihanna, Better Man by Little Big Town, and You'll Always Find Your Way Back Home by Miley Cyrus."
+        "question": "What is the controversy surrounding Taylor Swift's music and how has it impacted her career?",
+        "expected_answer": "Taylor Swift has been involved in several controversies throughout her career, including her feud with Kanye West and Kim Kardashian, her lawsuit against a radio DJ who allegedly groped her, and her recent feud with Scooter Braun. These controversies have impacted her career in several ways. First, they have made her a more polarizing figure in the music industry, with some fans supporting her and others criticizing her. Second, they have led to a decrease in her popularity among some listeners, particularly those who do not agree with her political views or her actions in the feuds. Finally, they have led to a decrease of her music being played on some radio stations, which has impacted her ability to reach new audiences",
+        "actual_answer": " Based on the provided context, the controversies surrounding Taylor Swift's music have impacted her career in several ways, making her a more polarizing figure in the music industry, leading to a decrease in her popularity among some listeners, and resulting in a decrease of her music being played on some radio stations. This has potentially affected her ability to reach new audiences. However, it's important to note that Swift has also had a significant impact on the music industry as a whole, with",
+        "context": "Taylor Swift has been involved in several controversies throughout her career, including her feud with Kanye West and Kim Kardashian, her lawsuit against a radio DJ who allegedly groped her, and her recent feud with Scooter Braun. These controversies have impacted her career in several ways. First, they have made her a more polarizing figure in the music industry, with some fans supporting her and others criticizing her. Second, they have led to a decrease in her popularity among some listeners, particularly those who do not agree with her political views or her actions in the feuds. Finally, they have led to a decrease of her music being played on some radio stations, which has impacted her ability to reach new audiences Taylor Swift has had a wide impact on the music industry, with publications noting her chart success, critical acclaim, and fan support. She has influenced the music industry in many aspects and is considered a cultural \"vitality\" or zeitgeist."
     },
     {
         "question_id": 1,
-        "question": "What is Taylor Swift's latest music video?",
-        "expected_answer": "Taylor Swift's latest music video is \"Bejeweled\".",
-        "actual_answer": " Based on the provided context, the most recent music video released by Taylor Swift is \"Bejeweled\".",
-        "context": "Taylor Swift's latest music video is \"Bejeweled\"."
+        "question": "What is the most popular Taylor Swift song among millennials? How does this song relate to the millennial generation? What is the significance of this song in the millennial culture?",
+        "expected_answer": "Taylor Swift's \"Shake It Off\" is the most popular song among millennials. This song relates to the millennial generation as it is an anthem of self-acceptance and embracing one's individuality. The song's message of not letting others bring you down and to just dance it off resonates with the millennial culture, which is often characterized by a strong sense of individuality and a rejection of societal norms. Additionally, the song's upbeat and catchy melody makes it a perfect fit for the millennial generation, which is known for its love of pop music.",
+        "actual_answer": " Based on the provided context, Taylor Swift's \"Shake It Off\" is the most beloved Taylor Swift song among millennials. This song resonates with the millennial generation as it is an anthem of self-acceptance and embracing one's individuality. The song's message of not letting others bring you down and to just dance it off aligns with the millennial culture, which is often characterized by a strong sense of individuality and a re",
+        "context": "Taylor Swift's \"Shake It Off\" is the most popular song among millennials. This song relates to the millennial generation as it is an anthem of self-acceptance and embracing one's individuality. The song's message of not letting others bring you down and to just dance it off resonates with the millennial culture, which is often characterized by a strong sense of individuality and a rejection of societal norms. Additionally, the song's upbeat and catchy melody makes it a perfect fit for the millennial generation, which is known for its love of pop music."
     },
     {
         "question_id": 2,
-        "question": "what's her IG",
-        "expected_answer": "Taylor Swift's official Instagram account was @taylorswift.",
-        "actual_answer": " Based on the provided context, there is no information about a specific Instagram handle for anyone mentioned or present in the context. Therefore, I cannot provide the answer to the question based on the provided information. I'm here to help answer factual questions to the best of my ability, and in this case, I don't have enough information to provide a clear and concise answer. If you have any other factual questions, feel free to ask!",
-        "context": ""
+        "question": "What is the significance of the album Red in Taylor Swift's career? How did it impact her music and her image as a pop star?",
+        "expected_answer": "Taylor Swift's album Red was released in 2012 and it was a significant milestone in her career. It was her fourth studio album and it marked a departure from her country roots to a more pop-oriented sound. The album was a commercial success, selling over 1.2 million copies in its first week and it was certified 6x platinum by the RIAA.The album Red also had a significant impact on Taylor Swift's image as a pop star. It showcased her growth as an artist and her ability to experiment with different genres. The album's lead single, \"We Are Never Ever Getting Back Together\" became a global hit and it established Taylor Swift as a pop star.",
+        "actual_answer": " Based on the provided context, the album \"Red\" was a significant stepping stone in Taylor Swift's career as it marked her departure from country music to a more pop-oriented sound. The album was a commercial success, with over 1.2 million copies sold in its first week and 6x platinum certification by the RIAA. Additionally, it showcased Taylor Swift's artistic growth and her ability to experiment with different genres. The lead single \"We",
+        "context": "Taylor Swift's album Red was released in 2012 and it was a significant milestone in her career. It was her fourth studio album and it marked a departure from her country roots to a more pop-oriented sound. The album was a commercial success, selling over 1.2 million copies in its first week and it was certified 6x platinum by the RIAA.The album Red also had a significant impact on Taylor Swift's image as a pop star. It showcased her growth as an artist and her ability to experiment with different genres. The album's lead single, \"We Are Never Ever Getting Back Together\" became a global hit and it established Taylor Swift as a pop star."
     },
     {
         "question_id": 3,
-        "question": "What is the controversy surrounding Taylor Swift's avid fan base and their love for her merchandise at her concerts?",
-        "expected_answer": "Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior.",
-        "actual_answer": " Based on the context provided, Taylor Swift's fan base is criticized for their enthusiasm towards her merchandise at concerts due to several reasons. These include the merchandise being sold out rapidly, leaving many fans disappointed; some fans buying multiple items to resell them at a higher price, creating a black market for Taylor Swift merchandise; and fans exhibiting unsavory behavior leading to some being banned from attending her concerts.",
-        "context": "Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior."
+        "question": "What is Taylor Swift's favorite color?",
+        "expected_answer": "Taylor Swift has expressed a fondness for the color white in the past, but she hasn't explicitly stated a definitive favorite color.",
+        "actual_answer": " Based on the provided context, it does not contain enough information to answer the question about Taylor Swift's preferred color. Therefore, I cannot provide an answer based on the context alone. If you have additional relevant information, please provide it so I can try to help answer your question. Otherwise, my response will be \"I don't know the answer to that question based on the provided information.\"",
+        "context": "Let\u2019s keep the discussion relevant to Taylor Swift."
     },
     {
         "question_id": 4,
-        "question": "What awards has Taylor Swift won?",
-        "expected_answer": "Taylor Swift has won Artist of the Year by the Nashville Songwriters Association (2010 and 2011), Woman of the Year by Billboard (2011), Entertainer of the Year by the Academy of Country Music (2011 and 2012) and the Country Music Association in 2011, and Artist of the Year and Favorite Country Album at the American Music Awards of 2011.",
-        "actual_answer": " Based on the provided context, Taylor Swift has won multiple awards throughout her career. She has received Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, two Brit Awards, and has been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association. She was also the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of",
-        "context": "Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient. Taylor Swift has won Artist of the Year by the Nashville Songwriters Association (2010 and 2011), Woman of the Year by Billboard (2011), Entertainer of the Year by the Academy of Country Music (2011 and 2012) and the Country Music Association in 2011, and Artist of the Year and Favorite Country Album at the American Music Awards of 2011."
-    },
-    {
-        "question_id": 5,
-        "question": "Can you taste food without a sense of smell?",
-        "expected_answer": "Let\u2019s keep the discussion relevant to Taylor Swift.",
-        "actual_answer": " Based on the given context, the ability to taste food does depend on the sense of smell. Our taste buds can detect the basic tastes like sweet, sour, salty, bitter, and umami. However, our experience of the full taste of food is largely influenced by our sense of smell. The smell receptors in our nose mix with the taste sensations from our tongue to create the complex flavors that we perceive. This combination of taste and smell is known as gust",
+        "question": "tay tay 4life",
+        "expected_answer": "Yes, Taylor Swift for life",
+        "actual_answer": " Based on the provided context, there is no information given about a person named \"Tay Tay\" making a commitment to anyone for a lifetime. Therefore, I cannot answer the question with certainty. I would respond with \"I don't know the answer to that question based on the provided information.\"",
         "context": ""
     },
     {
+        "question_id": 5,
+        "question": "How many awards has Taylor Swift won?",
+        "expected_answer": "Taylor Swift has won 12 Grammy Awards, an Emmy Award, 40 American Music Awards, 29 Billboard Music Awards, 92 Guinness World Records, and 14 MTV Video Music Awards.",
+        "actual_answer": " Based on the provided context, Taylor Swift has won a total of 12 Grammy Awards, an Emmy Award, 40 American Music Awards, 29 Billboard Music Awards, 92 Guinness World Records, and 14 MTV Video Music Awards. This information was given in the first context. Therefore, the answer is: Taylor Swift has received a total of 89 awards (12 Grammy Awards + 1 Emmy Award +",
+        "context": "Taylor Swift has won 12 Grammy Awards, an Emmy Award, 40 American Music Awards, 29 Billboard Music Awards, 92 Guinness World Records, and 14 MTV Video Music Awards. Taylor Swift has won 10 Grammy Awards, 23 American Music Awards, 8 Academy of Country Music Awards, and 2 Brit Awards."
+    },
+    {
         "question_id": 6,
-        "question": "What is the reputation of Taylor Swift's latest album among her avid fans?",
-        "expected_answer": "Taylor Swift's latest album, Reputation, has received mixed reviews from her avid fans. While some fans have praised the album for its catchy songs and bold lyrics, others have criticized it for its lack of depth and repetitive themes. Overall, the album has been met with a mixed response from Swift's fans, with some loving it and others feeling disappointed.",
-        "actual_answer": " Based on the provided context, Taylor Swift's latest album, Reputation, has received mixed reviews from her avid fans. Some fans have praised the album for its catchy songs and bold lyrics, while others have criticized it for its lack of depth and repetitive themes. The response from her fans has been a mix of love and disappointment overall. Therefore, the reputation of Taylor Swift's latest album among her avid fans is considered mixed.",
-        "context": "Taylor Swift's latest album, Reputation, has received mixed reviews from her avid fans. While some fans have praised the album for its catchy songs and bold lyrics, others have criticized it for its lack of depth and repetitive themes. Overall, the album has been met with a mixed response from Swift's fans, with some loving it and others feeling disappointed. Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior."
+        "question": "What charitable donations has Taylor Swift made?",
+        "expected_answer": "Taylor Swift has donated $500,000 to the victims of the Tennessee floods, $750,000 to victims of recent tornadoes in the U.S., $1 million to Louisiana flood relief efforts, and $100,000 to the Dolly Parton Fire Fund.",
+        "actual_answer": " Based on the provided context, Taylor Swift has donated $500,000 to the victims of the Tennessee floods, $750,000 to victims of recent tornadoes in the U.S., $1 million to Louisiana flood relief efforts, and $100,000 to the Dolly Parton Fire Fund.",
+        "context": "Taylor Swift has donated $500,000 to the victims of the Tennessee floods, $750,000 to victims of recent tornadoes in the U.S., $1 million to Louisiana flood relief efforts, and $100,000 to the Dolly Parton Fire Fund."
     },
     {
         "question_id": 7,
-        "question": "What is the most popular song of Taylor Swift? How does she come up with her song ideas? What is her favorite color?",
-        "expected_answer": "Taylor Swift's most popular song is \"Shake It Off.\" She comes up with her song ideas from personal experiences and emotions. Her favorite color is pink.",
-        "actual_answer": " Based on the provided context, the biggest hit song of Taylor Swift is \"Shake It Off,\" and she is inspired by personal experiences and emotions to write music. Her favorite color is pink.",
-        "context": "Taylor Swift's most popular song is \"Shake It Off.\" She comes up with her song ideas from personal experiences and emotions. Her favorite color is pink."
+        "question": "Why do cats always land on their feet?",
+        "expected_answer": "Let\u2019s keep the discussion relevant to Taylor Swift.",
+        "actual_answer": " The ability of cats to right themselves during falls is a fascinating behavior known as the \"righting reflex.\" There are several explanations for this ability, but the most widely accepted one is based on the structure of a cat's inner ear and their muscle system. The fluid-filled semicircular canals in their inner ears provide cats with a sense of balance and spatial orientation. When a cat falls, the fluid in their inner ears moves to one side, sending signals to their neur",
+        "context": ""
     },
     {
         "question_id": 8,
-        "question": "How tall is Taylor Swift?",
-        "expected_answer": "Taylor Swift is approximately 5 feet 10 inches (178 cm) tall.",
-        "actual_answer": " Based on the provided context, Taylor Swift is approximately 5 feet 10 inches (178 cm) tall.",
-        "context": "Taylor Swift is approximately 5 feet 10 inches (178 cm) tall."
+        "question": "How many awards has Taylor Swift won?",
+        "expected_answer": "Taylor Swift has won 10 Grammy Awards, 23 American Music Awards, 8 Academy of Country Music Awards, and 2 Brit Awards.",
+        "actual_answer": " Based on the provided context, Taylor Swift has won a total of 12 Grammy Awards, an Emmy Award, 40 American Music Awards, 29 Billboard Music Awards, 92 Guinness World Records, and 14 MTV Video Music Awards. This information was given in the first context. Therefore, the answer is: Taylor Swift has received a total of 89 awards (12 Grammy Awards + 1 Emmy Award +",
+        "context": "Taylor Swift has won 12 Grammy Awards, an Emmy Award, 40 American Music Awards, 29 Billboard Music Awards, 92 Guinness World Records, and 14 MTV Video Music Awards. Taylor Swift has won 10 Grammy Awards, 23 American Music Awards, 8 Academy of Country Music Awards, and 2 Brit Awards."
+    },
+    {
+        "question_id": 9,
+        "question": "What is Taylor Swift's sense of humor like?",
+        "expected_answer": "Taylor Swift has a \u201csick sense of humor\u201d and is \u201cexactly who you think she is\u201d.",
+        "actual_answer": " Based on the provided context, Taylor Swift is described as having a \"sick sense of humor.\" This is a colloquial term that generally refers to having a good, offbeat, or darkly comedic sense of humor. However, it's important to note that this is just one description, and people may interpret what constitutes a \"sick\" sense of humor differently. The context also mentions that she is \"exactly who you think she is,\" which could",
+        "context": "Taylor Swift has a \u201csick sense of humor\u201d and is \u201cexactly who you think she is\u201d."
     },
     {
         "question_id": 10,
-        "question": "What is the opinion of Sasha Frere-Jones of The New Yorker about Taylor Swift's performance?",
-        "expected_answer": "Sasha Frere-Jones of The New Yorker called Taylor Swift a \"preternaturally skilled\" performer with a vibrant stage presence.",
-        "actual_answer": " Based on the provided context, Sasha Frere-Jones of The New Yorker has expressed that Taylor Swift is a \"preternaturally skilled\" performer with a vibrant stage presence.",
-        "context": "Sasha Frere-Jones of The New Yorker called Taylor Swift a \"preternaturally skilled\" performer with a vibrant stage presence."
+        "question": "What was the lead single from Taylor Swift's album Lover?",
+        "expected_answer": "The lead single from Taylor Swift's album Lover was \"Me!\"",
+        "actual_answer": " Based on the provided context, there is no explicit mention of which song served as the first release from Taylor Swift's album Lover. Therefore, I don't know the answer to that question based on the provided information.",
+        "context": ""
     },
     {
         "question_id": 11,
-        "question": "What is the reason behind Taylor Swift's loyal followers?",
-        "expected_answer": "Taylor Swift's loyal followers are a result of her relatable and authentic personality. She has always been open about her personal life and struggles, which has made her fans feel connected to her. Additionally, her music is often about love and heartbreak, which resonates with many people. Her fans also appreciate her strong work ethic and her dedication to her craft. Overall, Taylor Swift's loyal followers admire her for her talent, her personality, and her relatability.",
-        "actual_answer": " Based on the provided context, Taylor Swift's loyal followers are a result of her relatable and authentic personality, as well as her music that resonates with many people about love and heartbreak. Her fans also appreciate her strong work ethic and dedication to her craft. There is no information in the context about why the fans' loyalty is shown in a particularly strong way, so that part of the question cannot be directly answered based on the context alone.\n\nHowever, there is",
-        "context": "Taylor Swift's loyal followers are a result of her relatable and authentic personality. She has always been open about her personal life and struggles, which has made her fans feel connected to her. Additionally, her music is often about love and heartbreak, which resonates with many people. Her fans also appreciate her strong work ethic and her dedication to her craft. Overall, Taylor Swift's loyal followers admire her for her talent, her personality, and her relatability. Taylor Swift's avid fanbase has been the subject of controversy in recent years due to their love for her merchandising at her concerts. The controversy stems from the fact that her merchandise is often sold out within minutes of being released, leaving many fans disappointed. Additionally, some fans have been accused of buying multiple items to resell them at a higher price, which has led to a black market for Taylor Swift merchandise. The controversy has also led to some fans being banned from attending her concerts due to their behavior."
+        "question": "What is the name of the concert that taylor swift is currently on tour for?",
+        "expected_answer": "Taylor Swift is currently on tour for her Reputation Stadium Tour. The tour started in May 2018 and is scheduled to end in November 2018. The tour has been a huge success, with sold-out shows and rave reviews from fans and critics alike.",
+        "actual_answer": " Based on the provided context, the name of Taylor Swift's current tour is the \"Reputation Stadium Tour.\"",
+        "context": "Taylor Swift is currently on tour for her Reputation Stadium Tour. The tour started in May 2018 and is scheduled to end in November 2018. The tour has been a huge success, with sold-out shows and rave reviews from fans and critics alike."
     },
     {
         "question_id": 12,
-        "question": "What is the significance of the album Speak Now in Taylor Swift's career as a millennial fan?",
-        "expected_answer": "Speak Now is a significant album in Taylor Swift's career as it marked a transition in her music style from country to pop. The album was released in 2010 and was a commercial success, selling over 1 million copies in the United States alone. The album also received critical acclaim, with many reviewers praising the album's lyrical depth and maturity. Speak Now also marked a turning point in Taylor Swift's personal life, as she wrote many of the songs on the album about her breakup with Taylor Lautner. The album's success and critical acclaim helped cement Taylor Swift's status as a pop star and paved the way for her future success.",
-        "actual_answer": " Based on the provided context, \"Speak Now\" is a significant album in Taylor Swift's career as a millennial artist due to its commercial success, critical acclaim, and transition from country to pop music style. The release of this album helped cement Taylor Swift's status as a pop star and paved the way for her future success. The lyrical depth and maturity depicted in the album also resonated with her millennial fanbase, making it a turning point",
-        "context": "Speak Now is a significant album in Taylor Swift's career as it marked a transition in her music style from country to pop. The album was released in 2010 and was a commercial success, selling over 1 million copies in the United States alone. The album also received critical acclaim, with many reviewers praising the album's lyrical depth and maturity. Speak Now also marked a turning point in Taylor Swift's personal life, as she wrote many of the songs on the album about her breakup with Taylor Lautner. The album's success and critical acclaim helped cement Taylor Swift's status as a pop star and paved the way for her future success."
+        "question": "What event caught the attention of Scott Borchetta in 2005?",
+        "expected_answer": "An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta.",
+        "actual_answer": " Based on the provided context, the answer is: An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta.",
+        "context": "An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta. An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta."
+    },
+    {
+        "question_id": 13,
+        "question": "What did Taylor Swift wear to the Another Cinderella Story premiere?",
+        "expected_answer": "Taylor Swift wore a boho BCBG white dress to the Another Cinderella Story premiere.",
+        "actual_answer": " Based on the provided context, Taylor Swift wore a boho BCBG white dress to the Another Cinderella Story premiere.",
+        "context": "Taylor Swift wore a boho BCBG white dress to the Another Cinderella Story premiere."
     },
     {
         "question_id": 14,
-        "question": "What are the lyrics from Taylor Swift's song \"Superman\"?",
-        "expected_answer": "The lyrics from Swift's song \"Superman\" include \"Tall, dark and beautiful\" and \"He's not all bad like his reputation.\"",
-        "actual_answer": " Based on the provided context, the lyrics from Taylor Swift's song \"Superman\" that are mentioned include: \"He's tall, dark and beautiful\" and \"He's not all bad like his reputation.\" However, it's important to note that these are only two lines from the song, and the full lyrics may include additional lines or verses that are not mentioned in the context. If you are looking for a more comprehensive list of lyrics, I would recommend checking a",
-        "context": "The lyrics from Swift's song \"Superman\" include \"Tall, dark and beautiful\" and \"He's not all bad like his reputation.\""
+        "question": "What is the name of Taylor Swift's childhood home?",
+        "expected_answer": "Taylor Swift's childhood home is in Wyomissing, Pennsylvania.",
+        "actual_answer": " Based on the provided context, the name of Taylor Swift's childhood home is in Wyomissing, Pennsylvania.",
+        "context": "Taylor Swift's childhood home is in Wyomissing, Pennsylvania."
     },
     {
         "question_id": 15,
-        "question": "What awards has Taylor Swift won?",
-        "expected_answer": "Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient.",
-        "actual_answer": " Based on the provided context, Taylor Swift has won multiple awards throughout her career. She has received Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, two Brit Awards, and has been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association. She was also the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of",
-        "context": "Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient. Taylor Swift has won Artist of the Year by the Nashville Songwriters Association (2010 and 2011), Woman of the Year by Billboard (2011), Entertainer of the Year by the Academy of Country Music (2011 and 2012) and the Country Music Association in 2011, and Artist of the Year and Favorite Country Album at the American Music Awards of 2011."
+        "question": "What is Taylor Swift's fan base called?",
+        "expected_answer": "Taylor Swift's fan base is commonly referred to as Swifties.",
+        "actual_answer": " Based on the provided context, Taylor Swift's fan base is called Swifties.",
+        "context": "Taylor Swift's fan base is commonly referred to as Swifties."
     },
     {
         "question_id": 16,
-        "question": "What sound does Swift's 2022 album, Midnights, have?",
-        "expected_answer": "Midnights has a more experimental, \"subdued and amorphous pop sound\".",
-        "actual_answer": " Midnights, Swift's 2022 album, has a more experimental, \"subdued and amorphous pop sound.\" (Answer from the provided context)",
-        "context": "Midnights has a more experimental, \"subdued and amorphous pop sound\"."
+        "question": "What did Taylor Swift tell USA Today about her relationships?",
+        "expected_answer": "Swift told USA Today that she feels comfortable singing about her relationships and listing times, dates, details, and names, but she feels shy when asked about them in interviews.",
+        "actual_answer": " Based on the provided context from the USA Today interview, Taylor Swift shared that she feels comfortable singing about her relationships with specific details and doesn't have any qualms about listing times, dates, and names in her music. However, when it comes to talks about her relationships in interviews, she feels shy and prefers to keep the focus on her music.",
+        "context": "Swift told USA Today that she feels comfortable singing about her relationships and listing times, dates, details, and names, but she feels shy when asked about them in interviews."
     },
     {
         "question_id": 17,
-        "question": "What is the musical style of the song \"Dear John\"?",
-        "expected_answer": "The musical style of the song \"Dear John\" is soft guitar, similar to John Mayer's own music.",
-        "actual_answer": " Based on the provided context, the genre or musical style of the song \"Dear John\" is identified as soft guitar, which is similar to the musical style of John Mayer's own music.",
-        "context": "The musical style of the song \"Dear John\" is soft guitar, similar to John Mayer's own music."
+        "question": "What genres did Taylor Swift explore with her albums Folklore and Evermore?",
+        "expected_answer": "Taylor Swift explored indie folk and alternative rock with her albums Folklore and Evermore.",
+        "actual_answer": " Based on the provided context, Taylor Swift explored indie folk and alternative rock genres with her albums \"Folklore\" and \"Evermore.\"",
+        "context": "Taylor Swift explored indie folk and alternative rock with her albums Folklore and Evermore."
     },
     {
         "question_id": 18,
-        "question": "Who are some of Taylor Swift's celebrity boyfriends?",
-        "expected_answer": "Taylor Swift has had several celebrity boyfriends, including Joe Alwyn, Tom Hiddleston, Calvin Harris, Harry Styles, Jake Gyllenhaal, John Mayer, Taylor Lautner, and Joe Jonas.",
-        "actual_answer": " Based on publicly available information, some of Taylor Swift's famous romantic partners include:\n\n1. Joe Jonas (2008-2010)\n2. Taylor Lautner (2009-2010)\n3. Jake Gyllenhaal (2010-2011)\n4. Conor Kennedy (2012)\n5. Harry Styles (2012-20",
+        "question": "Tell me more",
+        "expected_answer": "I am a Swiftie Bot, I am here to help you with questions related to Taylor Swift",
+        "actual_answer": " Based on the provided context, there is no specific information given that could be used to directly answer the question. Therefore, I don't know the answer to that question based on the provided information.",
         "context": ""
     },
     {
         "question_id": 19,
-        "question": "What have critics praised about Taylor Swift's performances?",
-        "expected_answer": "Critics have praised Taylor Swift's versatility as an entertainer, her ability to switch onstage personas and performance styles depending on the varying themes and aesthetics of her albums, and her Broadway theatricality in her concert productions.",
-        "actual_answer": " Based on the provided context, critics have praised Taylor Swift's performances for her versatility as an entertainer, her ability to switch onstage personas and performance styles depending on the varying themes and aesthetics of her albums, and her Broadway theatricality in her concert productions.",
-        "context": "Critics have praised Taylor Swift's versatility as an entertainer, her ability to switch onstage personas and performance styles depending on the varying themes and aesthetics of her albums, and her Broadway theatricality in her concert productions."
+        "question": "What impact has Taylor Swift had on the music industry?",
+        "expected_answer": "Taylor Swift has had a wide impact on the music industry, with publications noting her chart success, critical acclaim, and fan support. She has influenced the music industry in many aspects and is considered a cultural \"vitality\" or zeitgeist.",
+        "actual_answer": " Based on the provided context, Taylor Swift has had a significant impact on the music industry, as noted by publications, due to her chart success, critical acclaim, and strong fan support. She is considered a cultural \"vitality\" or zeitgeist, indicating that she has had an influence on the music industry as a whole.",
+        "context": "Taylor Swift has had a wide impact on the music industry, with publications noting her chart success, critical acclaim, and fan support. She has influenced the music industry in many aspects and is considered a cultural \"vitality\" or zeitgeist."
     },
     {
         "question_id": 20,
+        "question": "What producers worked on Taylor Swift's album \"1989\"?",
+        "expected_answer": "Jack Antonoff, Max Martin, Shellback, Imogen Heap, Ryan Tedder, and Ali Payami worked on Taylor Swift's album \"1989\".",
+        "actual_answer": " Based on the provided context, Jack Antonoff, Max Martin, Shellback, Imogen Heap, Ryan Tedder, and Ali Payami worked on Taylor Swift's album \"1989\".",
+        "context": "Jack Antonoff, Max Martin, Shellback, Imogen Heap, Ryan Tedder, and Ali Payami worked on Taylor Swift's album \"1989\"."
+    },
+    {
+        "question_id": 21,
         "question": "What award did Taylor Swift win for the song \"Better Man\"?",
         "expected_answer": "Taylor Swift won the Song of the Year award at the 51st CMA Awards for the song \"Better Man\".",
-        "actual_answer": " Based on the provided context, Taylor Swift won the Song of the Year award at the 51st Country Music Association Awards for the song \"Better Man\".",
-        "context": "Taylor Swift won the Song of the Year award at the 51st CMA Awards for the song \"Better Man\". Taylor Swift has won Country Music Association Awards (including the Pinnacle Award), 8 Academy of Country Music Awards, and two Brit Awards. She has also been honored by the Nashville Songwriters Association, the Songwriters Hall of Fame, and the National Music Publishers' Association, and was the youngest person on Rolling Stone's list of the 100 Greatest Songwriters of All Time in 2015. At the 64th BMI Awards in 2016, Swift was the first woman to be honored with an award named after its recipient."
+        "actual_answer": " Based on the provided context, Taylor Swift won the Song of the Year award at the 51st CMA Awards for the song \"Better Man\".",
+        "context": "Taylor Swift won the Song of the Year award at the 51st CMA Awards for the song \"Better Man\"."
+    },
+    {
+        "question_id": 22,
+        "question": "What is Taylor Swift's opinion on her fling with John Mayer?",
+        "expected_answer": "Taylor Swift regrets her fling with John Mayer \u201call the time.\u201d",
+        "actual_answer": " I don't know the answer to that question based on the provided information. Taylor Swift and John Mayer have discussed their past relationship in various interviews and songs over the years. However, to provide an accurate answer would require specifically referencing such interviews or songs.",
+        "context": ""
+    },
+    {
+        "question_id": 23,
+        "question": "What was the gross revenue of Swift's first headlining concert tour?",
+        "expected_answer": "The Fearless Tour grossed over $63 million.",
+        "actual_answer": " Based on the provided context, Swift's first headlining tour, called \"The Fearless Tour,\" grossed over $63 million before expenses.",
+        "context": "The Fearless Tour grossed over $63 million."
+    },
+    {
+        "question_id": 24,
+        "question": "What is Taylor Swift's record for most awarded female musician in AMA history?",
+        "expected_answer": "Taylor Swift holds the record for most awarded female musician in AMA history with 23 awards.",
+        "actual_answer": " Based on the provided context, Taylor Swift has won 23 American Music Awards, making it her record for the most awards won by a female artist in AMA history.",
+        "context": "Taylor Swift holds the record for most awarded female musician in AMA history with 23 awards. Taylor Swift has won 12 Grammy Awards, an Emmy Award, 40 American Music Awards, 29 Billboard Music Awards, 92 Guinness World Records, and 14 MTV Video Music Awards. Taylor Swift has won 10 Grammy Awards, 23 American Music Awards, 8 Academy of Country Music Awards, and 2 Brit Awards."
+    },
+    {
+        "question_id": 25,
+        "question": "What was the record broken by Taylor Swift with the release of her albums Folklore and Evermore?",
+        "expected_answer": "Taylor Swift broke the record for first-day album streams by a female artist on Spotify with the release of her albums Folklore and Evermore.",
+        "actual_answer": " Based on the provided context, Taylor Swift broke the record for first-day album streams by a female artist on Spotify with the release of her albums Folklore and Evermore.",
+        "context": "Taylor Swift broke the record for first-day album streams by a female artist on Spotify with the release of her albums Folklore and Evermore. Taylor Swift explored indie folk and alternative rock with her albums Folklore and Evermore."
+    },
+    {
+        "question_id": 26,
+        "question": "What is the reason behind Taylor Swift's loyal followers attending her concerts on her tour?",
+        "expected_answer": "Taylor Swift's loyal followers attend her concerts on her tour for various reasons. Firstly, her music is relatable and connects with her fans on a personal level. Secondly, her live performances are energetic and engaging, making the concert experience unforgettable. Lastly, her fans feel a sense of community and belonging when attending her shows, as they are surrounded by others who share the same love for her music.",
+        "actual_answer": " Based on the provided context, Taylor Swift's loyal fans attend her Reputation Stadium Tour concerts for several reasons. Her relatable music connects with them on a personal level, her live performances are energetic and engaging, and they feel a sense of community and belonging when attending her shows. The specific tour in question is the Reputation Stadium Tour.",
+        "context": "Taylor Swift's loyal followers attend her concerts on her tour for various reasons. Firstly, her music is relatable and connects with her fans on a personal level. Secondly, her live performances are energetic and engaging, making the concert experience unforgettable. Lastly, her fans feel a sense of community and belonging when attending her shows, as they are surrounded by others who share the same love for her music. Taylor Swift is currently on tour for her Reputation Stadium Tour. The tour started in May 2018 and is scheduled to end in November 2018. The tour has been a huge success, with sold-out shows and rave reviews from fans and critics alike."
+    },
+    {
+        "question_id": 27,
+        "question": "Can animals see in color?",
+        "expected_answer": "Let\u2019s keep the discussion relevant to Taylor Swift.",
+        "actual_answer": " Based on scientific research, most animals do not see colors in the same way that humans do. Humans have three types of color receptors in their eyes, while other animals, like dogs and cats, have only two. Some animals, like bees and some primates, have more types of color receptors and can perceive a broader range of colors than humans. However, the way they perceive these colors may be different from how humans perceive the same colors. Therefore,",
+        "context": ""
+    },
+    {
+        "question_id": 28,
+        "question": "Who were some of the celebrities that attended Taylor Swift's July 2016 Independence Day bash?",
+        "expected_answer": "Celebrities that attended Taylor Swift's July 2016 Independence Day bash included Blake Lively, Karlie Kloss, Gigi Hadid, Cara Delevingne, and Tom Hiddleston.",
+        "actual_answer": " Based on the provided context, the celebrities that attended Taylor Swift's July 2016 Independence Day bash were Blake Lively, Karlie Kloss, Gigi Hadid, Cara Delevingne, and Tom Hiddleston.",
+        "context": "Celebrities that attended Taylor Swift's July 2016 Independence Day bash included Blake Lively, Karlie Kloss, Gigi Hadid, Cara Delevingne, and Tom Hiddleston."
+    },
+    {
+        "question_id": 29,
+        "question": "What event caught the attention of Scott Borchetta in 2005?",
+        "expected_answer": "An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta.",
+        "actual_answer": " Based on the provided context, the answer is: An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta.",
+        "context": "An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta. An industry showcase at Nashville's Bluebird Cafe in 2005 caught the attention of Scott Borchetta."
+    },
+    {
+        "question_id": 31,
+        "question": "Who are some of the artists that have influenced Taylor Swift's songwriting?",
+        "expected_answer": "Taylor Swift has been influenced by artists such as Shania Twain, Loretta Lynn, Tammy Wynette, Dolly Parton, Patty Griffin, and Lori McKenna.",
+        "actual_answer": " Based on the provided context, Taylor Swift has been influenced in her songwriting by artists such as Shania Twain, Loretta Lynn, Tammy Wynette, Dolly Parton, Patty Griffin, and Lori McKenna.",
+        "context": "Taylor Swift has been influenced by artists such as Shania Twain, Loretta Lynn, Tammy Wynette, Dolly Parton, Patty Griffin, and Lori McKenna. Taylor Swift has had a wide impact on the music industry, with publications noting her chart success, critical acclaim, and fan support. She has influenced the music industry in many aspects and is considered a cultural \"vitality\" or zeitgeist."
+    },
+    {
+        "question_id": 32,
+        "question": "How has Taylor Swift evolved as an artist throughout her career?",
+        "expected_answer": "Taylor Swift's music has undergone significant evolution over the years. She began as a country-pop artist and gradually transitioned into a pop sound, experimenting with different musical styles and themes along the way.",
+        "actual_answer": " Based on the provided context, Taylor Swift's artistic developments throughout her music career can be summarized as follows: Taylor Swift started her career as a country-pop artist. However, she gradually transitioned into a pop sound over the years. Additionally, she experimented with various musical styles and themes throughout her discography. The context suggests that this evolution occurred gradually over the course of her career.",
+        "context": "Taylor Swift's music has undergone significant evolution over the years. She began as a country-pop artist and gradually transitioned into a pop sound, experimenting with different musical styles and themes along the way."
+    },
+    {
+        "question_id": 33,
+        "question": "is she still on spotify?",
+        "expected_answer": "Taylor Swift's entire discography is available on Spotify, including her latest releases.",
+        "actual_answer": " Based on the provided context, yes, Taylor Swift is still available on Spotify.",
+        "context": "Taylor Swift's entire discography is available on Spotify, including her latest releases."
+    },
+    {
+        "question_id": 35,
+        "question": "How many Grammy Awards has Taylor Swift won?",
+        "expected_answer": "Taylor Swift has won 12 Grammy Awards.",
+        "actual_answer": " Based on the provided context, there is no information given about Taylor Swift's Grammy count. Therefore, I don't know the answer to that question based on the provided information.",
+        "context": ""
     }
 ]

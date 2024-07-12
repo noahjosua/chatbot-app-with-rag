@@ -4,7 +4,6 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 import pandas as pd
 
 from constants import constants
-from helper import print_to_console
 
 
 def setup_documents(dataset):
@@ -27,17 +26,16 @@ def setup_documents(dataset):
 
 def _create_dataframe(dataset):
     dataframe = pd.read_csv(dataset)
-    # dataframe.fillna(constants.REPLACEMENT_NAN_VALUES, inplace=True)
-    substring = "having trouble understanding"
-    mask = dataframe['answer'].str.contains(substring)
+    mask = dataframe[constants.ANSWER_KEY].str.contains(constants.UNUSABLE_ROW_KEY)
     filtered_dataframe = dataframe[~mask]
     new_dataframe = _add_column_name_to_row_value(filtered_dataframe)
 
     # Combine all columns into a single column, removing extra spaces
-    new_dataframe[constants.DOCUMENT_PAGE_CONTENT_KEY] = new_dataframe.apply(lambda r: '; '.join(r.astype(str).str.strip()),
-                                                                     axis=1)
-    pd.set_option('display.max_colwidth', None)  # Set option to display full column width
-    print_to_console.print_dataframe(new_dataframe)
+    new_dataframe[constants.DOCUMENT_PAGE_CONTENT_KEY] = new_dataframe.apply(
+        lambda r: '; '.join(r.astype(str).str.strip()),
+        axis=1)
+    # pd.set_option('display.max_colwidth', None)  # Set option to display full column width
+    # print_to_console.print_dataframe(new_dataframe)
     return new_dataframe
 
 
@@ -52,7 +50,6 @@ def _add_column_name_to_row_value(dataframe):
 
 def _strip_unnecessary_prefixes_from_metadata(loaded_documents):
     for document in loaded_documents:
-
         # Process metadata by splitting keys and values and updating document metadata
         processed_metadata = {key.split(': ')[0]: value.split(': ')[1] for key, value in document.metadata.items()}
         document.metadata = processed_metadata

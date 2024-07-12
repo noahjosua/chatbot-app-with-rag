@@ -5,19 +5,21 @@ import pandas as pd
 from deepeval.dataset import EvaluationDataset
 from deepeval.test_case import LLMTestCase
 
+from constants import constants
 
-def create_and_push_dataset_to_confident_ai():
-    api_key = os.getenv("CONFIDENT_API_KEY")
+
+def create_and_push_dataset_to_confident_ai(json_file_path, dataset_alias):
+    api_key = os.getenv(constants.CONFIDENT_API_KEY)
     deepeval.login_with_confident_api_key(api_key)
 
-    df = pd.read_json('evaluation_results.json')
+    df = pd.read_json(json_file_path)
 
     test_cases = []
     for index, row in df.iterrows():
-        question = row['question']
-        expected_answer = row['expected_answer']
-        actual_answer = row['actual_answer']
-        context = row['context']
+        question = row[constants.QUESTION_KEY]
+        expected_answer = row[constants.EXPECTED_ANSWER_KEY]
+        actual_answer = row[constants.ACTUAL_ANSWER_KEY]
+        context = row[constants.CONTEXT_KEY]
 
         test_case = LLMTestCase(
             input=question,
@@ -28,4 +30,4 @@ def create_and_push_dataset_to_confident_ai():
         test_cases.append(test_case)
 
     dataset = EvaluationDataset(test_cases=test_cases)
-    dataset.push(alias="Evaluation Dataset - Taylor Swift", overwrite=False)
+    dataset.push(alias=dataset_alias, overwrite=False)

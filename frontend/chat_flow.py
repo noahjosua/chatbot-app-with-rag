@@ -19,7 +19,7 @@ def chat_flow(chat_model, retriever):
 
             # Execute QA process with user prompt and chat history
             response = qa_chain(
-                {constants.QA_USER_PROMPT_KEY: rephrased_user_prompt, constants.CHAT_HISTORY_KEY: chat_history})
+                {constants.QUESTION_KEY: rephrased_user_prompt, constants.CHAT_HISTORY_KEY: chat_history})
 
             # Extract and format sources from the response
             updated_response = chat_utils.extract_and_format_sources(response)

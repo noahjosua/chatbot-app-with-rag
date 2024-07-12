@@ -11,7 +11,7 @@ if __name__ == '__main__':
         with placeholder.container():
             placeholder.write('Hang in there - Everything is being set up for you...')
 
-        chat_model_and_retriever = initialization.initial_setup(constants.DATASET_SHORTENED) # noch ändern
+        chat_model_and_retriever = initialization.initial_setup(constants.DATASET_ORIGINAL)
         st.session_state.chat_model = chat_model_and_retriever[0]
         st.session_state.retriever = chat_model_and_retriever[1]
         placeholder.empty()

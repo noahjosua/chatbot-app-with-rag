@@ -26,7 +26,7 @@ def setup_qa_system(chat_model, retriever, user_prompt, prompt_template):
     # Initialize StuffDocumentsChain to combine documents
     combine_documents_chain = StuffDocumentsChain(
         llm_chain=llm_chain,
-        document_variable_name=constants.DOCUMENT_PROMPT_VARIABLE_NAME,
+        document_variable_name=constants.CONTEXT_KEY,
         document_prompt=document_prompt,
         callbacks=None,
     )
@@ -76,11 +76,11 @@ def format_answer_for_ui(response):
 
     # Check if sources exist and format answer accordingly
     if len(response[constants.RESPONSE_SOURCES_KEY]) > 0:
-        formatted_answer += f'{response[constants.RESPONSE_ANSWER_KEY]}{constants.FORMATTED_ANSWER_WITH_CONTEXT}'
+        formatted_answer += f'{response[constants.ANSWER_KEY]}{constants.FORMATTED_ANSWER_WITH_CONTEXT}'
         for source in response[constants.RESPONSE_SOURCES_KEY]:
             formatted_answer += f"- {source}\n\n"
     else:
-        formatted_answer += f'{response[constants.RESPONSE_ANSWER_KEY]}{constants.FORMATTED_ANSWER_WITHOUT_CONTEXT}'
+        formatted_answer += f'{response[constants.ANSWER_KEY]}{constants.FORMATTED_ANSWER_WITHOUT_CONTEXT}'
     return formatted_answer
 
 
@@ -89,7 +89,7 @@ def add_messages_to_history(user_prompt, formatted_answer, response):
     st.session_state.chathistory.append(
         {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
     st.session_state.chathistory.append({constants.ROLE: constants.ROLE_ASSISTANT,
-                                         constants.MESSAGE_CONTENT_KEY: response[constants.RESPONSE_ANSWER_KEY]})
+                                         constants.MESSAGE_CONTENT_KEY: response[constants.ANSWER_KEY]})
     # Append user prompt and formatted answer to messages
     st.session_state.messages.append(
         {constants.ROLE: constants.ROLE_USER, constants.MESSAGE_CONTENT_KEY: user_prompt})
