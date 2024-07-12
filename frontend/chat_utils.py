@@ -44,8 +44,7 @@ def setup_qa_system(chat_model, retriever, user_prompt, prompt_template):
 
 
 def rephrase_user_prompt_if_necessary(chat_model, user_prompt):
-    contextualize_system_prompt = constants.REPHRASED_SYSTEM_PROMPT
-    contextualize_system_prompt_template = PromptTemplate.from_template(contextualize_system_prompt)
+    contextualize_system_prompt_template = PromptTemplate.from_template(constants.REPHRASED_SYSTEM_PROMPT)
 
     # Initialize LLMChain with chat model and prompt template
     contextualize_chain = LLMChain(llm=chat_model, prompt=contextualize_system_prompt_template, callbacks=None,
