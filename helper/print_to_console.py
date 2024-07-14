@@ -1,4 +1,4 @@
-import constants
+from constants import constants
 
 import streamlit as st
 

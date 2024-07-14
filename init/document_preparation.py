@@ -3,13 +3,11 @@ from langchain_text_splitters import RecursiveCharacterTextSplitter
 
 import pandas as pd
 
-import constants
-from helper import print_to_console
+from constants import constants
 
 
-def setup_documents():
-    dataframe = _create_dataframe(constants.DATASET_EVAL)
-
+def setup_documents(dataset):
+    dataframe = _create_dataframe(dataset)
     loader = DataFrameLoader(dataframe, page_content_column=constants.DOCUMENT_PAGE_CONTENT_KEY)
     documents = loader.load()
     modified_documents = _strip_unnecessary_prefixes_from_metadata(documents)
@@ -26,17 +24,19 @@ def setup_documents():
     return _modify_metadata(chunks)
 
 
-def _create_dataframe(name_of_dataset):
-    dataframe = pd.read_csv(name_of_dataset)
-    dataframe.fillna(constants.REPLACEMENT_NAN_VALUES, inplace=True)
-    dataframe = _add_column_name_to_row_value(dataframe)
+def _create_dataframe(dataset):
+    dataframe = pd.read_csv(dataset)
+    mask = dataframe[constants.ANSWER_KEY].str.contains(constants.UNUSABLE_ROW_KEY)
+    filtered_dataframe = dataframe[~mask]
+    new_dataframe = _add_column_name_to_row_value(filtered_dataframe)
 
     # Combine all columns into a single column, removing extra spaces
-    dataframe[constants.DOCUMENT_PAGE_CONTENT_KEY] = dataframe.apply(lambda r: '; '.join(r.astype(str).str.strip()),
-                                                                     axis=1)
-    pd.set_option('display.max_colwidth', None)
-    # print_to_console.print_dataframe(dataframe)
-    return dataframe
+    new_dataframe[constants.DOCUMENT_PAGE_CONTENT_KEY] = new_dataframe.apply(
+        lambda r: '; '.join(r.astype(str).str.strip()),
+        axis=1)
+    # pd.set_option('display.max_colwidth', None)  # Set option to display full column width
+    # print_to_console.print_dataframe(new_dataframe)
+    return new_dataframe
 
 
 def _add_column_name_to_row_value(dataframe):
@@ -50,6 +50,7 @@ def _add_column_name_to_row_value(dataframe):
 
 def _strip_unnecessary_prefixes_from_metadata(loaded_documents):
     for document in loaded_documents:
+        # Process metadata by splitting keys and values and updating document metadata
         processed_metadata = {key.split(': ')[0]: value.split(': ')[1] for key, value in document.metadata.items()}
         document.metadata = processed_metadata
     # print_to_console.print_documents_with_modified_metadata(loaded_documents)

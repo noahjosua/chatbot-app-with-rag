@@ -7,20 +7,20 @@ from langchain_huggingface.llms import HuggingFaceEndpoint
 from langchain_huggingface import HuggingFaceEmbeddings
 from langchain_community.vectorstores import FAISS
 
-import constants
-import document_preparation
+from constants import constants
+from init import document_preparation
 
 
-def initial_setup():
-    vector_store = _setup_vector_store()
+def initial_setup(dataset):
+    vector_store = _setup_vector_store(dataset)
     retriever = _setup_retriever(vector_store)
     llm = _setup_llm()
 
     return [llm, retriever]
 
 
-def _setup_vector_store():
-    modified_chunks = document_preparation.setup_documents()
+def _setup_vector_store(dataset):
+    modified_chunks = document_preparation.setup_documents(dataset)
 
     embeddings = HuggingFaceEmbeddings(model_name=constants.EMBEDDINGS_MODEL_NAME)
     vector_store = FAISS.from_documents(modified_chunks, embeddings)
