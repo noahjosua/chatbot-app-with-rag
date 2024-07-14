@@ -1,5 +1,6 @@
 ### DATASET ###
 DATASET_ORIGINAL = 'datasets/original/taylor_swift.csv'
+DATASET_TEST = 'datasets/test/taylor_swift_test.csv'
 DATASET_EVAL = '../datasets/eval/taylor_swift_eval.csv'
 
 ### HUGGING FACE ###
